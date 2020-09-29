@@ -42,3 +42,6 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
+footer div {
+  margin: 10px;
+}
