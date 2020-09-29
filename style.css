@@ -1,0 +1,42 @@
+/*Formatage de la page on enlève les marges interne et externe de tout (pour les rajouter plus tard après*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* -- Début du header */
+
+header {
+  border: solid;
+  background-color: #e40e21;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+header ul li {
+  list-style: none;
+  padding: 10px;
+  font-size: 20px;
+  font-family: Arimo;
+}
+header ul li a {
+  padding: 10px;
+}
+
+/* Fin du header */
+/* Début FOOTER */
+footer {
+  border: solid;
+  background-color: #e40e21;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
