@@ -7,7 +7,6 @@
 /* -- Début du header */
 
 header {
-  border: solid;
   background-color: #e40e21;
   height: 100px;
   display: flex;
@@ -33,10 +32,13 @@ header ul li a {
 /* Fin du header */
 /* Début FOOTER */
 footer {
-  border: solid;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
   background-color: #e40e21;
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
