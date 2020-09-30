@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-/* Test du sticky footer */
 html,
 body {
   height: 100%;
@@ -112,8 +111,6 @@ footer div {
   }
 }
 
-/* RANKING PAGE  */
-
 main {
   height: 100%;
   background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
@@ -121,9 +118,10 @@ main {
   background-repeat: no-repeat;
   background-position: center center;
   /* background-color: #f2f4f3; */
-
   flex-grow: 1;
 }
+
+/* RANKING PAGE  */
 
 .hall-of-fame {
   height: 100%;
