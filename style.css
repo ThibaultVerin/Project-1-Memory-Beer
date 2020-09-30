@@ -2,6 +2,8 @@
 * {
   margin: 0;
   padding: 0;
+  
+  
 }
 
 /* -- Début du header */
@@ -17,7 +19,11 @@ header {
 
 #navbar {
   display: none;
+  
 }
+
+
+
 ul {
   display: flex;
   flex-direction: row;
@@ -31,19 +37,52 @@ header ul li {
 }
 header ul li a {
   padding: 10px;
+  text-decoration: none;
+  color: black;
 }
 #burger-logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   width: 100%;
+  text-align:center;
+  color: white;
 }
-#title {
-  margin-right: 20%;
+
+  
+}
+.title-desktop {
+  display: none;
 }
 #burger {
-  margin-left: 5%;
+  position: absolute;
+  left: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+  #burger-logo {
+    display: none;
+  }
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+  }
+  #navbar ul li {
+    
+    margin-right: 30px;
+    font-size: 30px;
+  }
+  #navbar ul li a{
+    text-decoration: none;
+    color: black;
+  }
+  .binch {
+    margin-left:30px;
+  }
+  
+ 
+  
 }
 /* Fin du header */
 
@@ -52,13 +91,24 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-
+  color: white;
   background-color: #e40e21;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  display: flex;
+  justify-content: center;
 }
 footer div {
   margin: 10px;
+}
+#social-med i{
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #footer-logo {
+    display: none;
+  }
 }
