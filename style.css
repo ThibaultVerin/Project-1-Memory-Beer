@@ -2,8 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  
-  
 }
 
 /* -- Début du header */
@@ -19,12 +17,9 @@ header {
 
 #navbar {
   display: none;
-  
 }
 
-
-
-ul {
+#navbar ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,12 +37,10 @@ header ul li a {
 }
 #burger-logo {
   width: 100%;
-  text-align:center;
+  text-align: center;
   color: white;
 }
 
-  
-}
 .title-desktop {
   display: none;
 }
@@ -55,7 +48,6 @@ header ul li a {
   position: absolute;
   left: 10px;
 }
-
 
 @media screen and (min-width: 768px) {
   #burger-logo {
@@ -69,20 +61,16 @@ header ul li a {
     font-size: 30px;
   }
   #navbar ul li {
-    
     margin-right: 30px;
     font-size: 30px;
   }
-  #navbar ul li a{
+  #navbar ul li a {
     text-decoration: none;
     color: black;
   }
   .binch {
-    margin-left:30px;
+    margin-left: 30px;
   }
-  
- 
-  
 }
 /* Fin du header */
 
@@ -103,7 +91,7 @@ footer {
 footer div {
   margin: 10px;
 }
-#social-med i{
+#social-med i {
   padding: 20px;
 }
 
