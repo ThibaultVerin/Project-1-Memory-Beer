@@ -10,10 +10,14 @@ header {
   background-color: #e40e21;
   height: 100px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
+#navbar {
+  display: none;
+}
 ul {
   display: flex;
   flex-direction: row;
@@ -28,8 +32,21 @@ header ul li {
 header ul li a {
   padding: 10px;
 }
+#burger-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  width: 100%;
+}
+#title {
+  margin-right: 20%;
+}
+#burger {
+  margin-left: 5%;
+}
 /* Fin du header */
+
 /* Début FOOTER */
 footer {
   position: absolute;
