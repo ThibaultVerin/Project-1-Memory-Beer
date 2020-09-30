@@ -1,8 +1,17 @@
-
 /*Formatage de la page on enlève les marges interne et externe de tout (pour les rajouter plus tard après*/
 * {
   margin: 0;
-  padding: 0;  
+  padding: 0;
+}
+
+/* Test du sticky footer */
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 /* -- Début du header */
@@ -18,10 +27,7 @@ header {
 
 #navbar {
   display: none;
-  
 }
-
-
 
 ul {
   display: flex;
@@ -37,16 +43,14 @@ header ul li {
 header ul li a {
   padding: 10px;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 #burger-logo {
   width: 100%;
-  text-align:center;
+  text-align: center;
   color: white;
 }
 
-  
-}
 .title-desktop {
   display: none;
 }
@@ -54,7 +58,6 @@ header ul li a {
   position: absolute;
   left: 10px;
 }
-
 
 @media screen and (min-width: 768px) {
   #burger-logo {
@@ -68,25 +71,22 @@ header ul li a {
     font-size: 30px;
   }
   #navbar ul li {
-    
     margin-right: 30px;
     font-size: 30px;
   }
-  #navbar ul li a{
+  #navbar ul li a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
   .binch {
-    margin-left:30px;
+    margin-left: 30px;
   }
-  
-  
 }
 /* Fin du header */
 
 /* Début FOOTER */
 footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   color: white;
@@ -97,11 +97,12 @@ footer {
   justify-content: space-between;
   display: flex;
   justify-content: center;
+  flex-shrink: 0;
 }
 footer div {
   margin: 10px;
 }
-#social-med i{
+#social-med i {
   padding: 20px;
 }
 
@@ -111,19 +112,21 @@ footer div {
   }
 }
 
-
 /* RANKING PAGE  */
 
-
-
-
-body {
+main {
+  height: 100%;
   background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
+  /* background-color: #f2f4f3; */
+
+  flex-grow: 1;
 }
 
 .hall-of-fame {
+  height: 100%;
   background-color: rgba(225, 225, 225, 0.5);
 }
 
@@ -159,9 +162,9 @@ body {
 
 @media screen and (min-width: 768px) {
   .hall-of-fame {
-    /* background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg'); */
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    height: 100%;
+    background-color: rgba(225, 225, 225, 0.5);
+    margin-bottom: 50px;
   }
 
   .hall-of-fame-container {
@@ -210,4 +213,3 @@ th {
 }
 
 /* END RANKING PAGE */
-
