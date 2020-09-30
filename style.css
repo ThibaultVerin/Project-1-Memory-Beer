@@ -1,31 +1,109 @@
-@font-face {
-  font-family: 'Arimo';
-  src: url('./fonts/arimo/Arimo-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Andika';
-  src: url(./fonts/andika/Andika-Regular.ttf);
-}
-
 /* RANKING PAGE  */
 
-.hall-of-fame {
-  background-image: url('');
+* {
+  margin: 0;
+}
+
+header {
+  height: 100px;
+  background-color: #e40e21;
+}
+
+footer {
+  height: 100px;
+  background-color: #e40e21;
+}
+
+body {
+  background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: auto;
+}
+
+.hall-of-fame {
+  background-color: rgba(225, 225, 225, 0.5);
+}
+
+.hall-of-fame-container {
+  width: 60%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hall-of-fame h1 {
-  width: 200px;
-  margin: 0px auto;
+  width: 100%;
+  padding: 10px 0px;
+  margin: 5% auto 0px auto;
+  text-align: center;
   font-family: 'Arimo';
+  font-size: 3vw;
+  background-color: rgba(225, 225, 225, 0.75);
+  border-radius: 5px;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  /* border: 1px solid #e40e21; */
+  border-radius: 5px;
+  background-color: rgba(225, 225, 225, 0.75);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px auto 0px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .hall-of-fame {
+    /* background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg'); */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .hall-of-fame-container {
+    width: 60%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .hall-of-fame table {
-  width: 300px;
+  width: 50%;
   margin: 20px auto;
-  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+.hall-of-fame td,
+th {
+  /* border: 1px solid black; */
+  padding: 5px;
+}
+
+.hall-of-fame td:nth-child(1) {
+  text-align: center;
+}
+
+.playBtn {
+  align-self: flex-end;
+}
+
+.playBtn button {
+  border: 1px solid #e40e21;
+  border-radius: 5%;
+  width: 100px;
+  height: 50px;
+  background-color: #e40e21;
+  font-size: 1.5vw;
+}
+
+.playBtn button a {
+  text-decoration: none;
+  color: white;
 }
 
 /* END RANKING PAGE */
