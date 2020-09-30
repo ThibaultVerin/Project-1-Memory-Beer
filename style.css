@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Arimo';
+  src: url('./fonts/arimo/Arimo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Andika';
+  src: url(./fonts/andika/Andika-Regular.ttf);
+}
+
+/* RANKING PAGE  */
+
+.hall-of-fame {
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.hall-of-fame h1 {
+  width: 200px;
+  margin: 0px auto;
+  font-family: 'Arimo';
+}
+
+.hall-of-fame table {
+  width: 300px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+/* END RANKING PAGE */
