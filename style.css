@@ -1,7 +1,21 @@
-/*Formatage de la page on enlève les marges interne et externe de tout (pour les rajouter plus tard après*/
+/* ------ DEBUT DU CSS COMMUN ------ */
 * {
   margin: 0;
   padding: 0;
+
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Pour faire un "sticky footer", nous avons mis le body en flex - column (header, main et footer sont les 3 items sur lequel flexbox est appliqué). On a appliqué un flex-grow: 1 sur main pour qu'il prenne le plus de place disponible & un flex-shrink : 0 sur le footer pour qu'il ait une dimension fixe*/
+
+body {
+  display: flex;
+  flex-direction: column;
+
 }
 
 /* -- Début du header */
@@ -19,7 +33,9 @@ header {
   display: none;
 }
 
+
 #navbar ul {
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,7 +49,7 @@ header ul li {
 header ul li a {
   padding: 10px;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 #burger-logo {
   width: 100%;
@@ -47,6 +63,7 @@ header ul li a {
 #burger {
   position: absolute;
   left: 10px;
+  cursor: pointer;
 }
 
 .linkNav {
@@ -80,7 +97,7 @@ header ul li a {
 
 /* Début FOOTER */
 footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   color: white;
@@ -91,6 +108,7 @@ footer {
   justify-content: space-between;
   display: flex;
   justify-content: center;
+  flex-shrink: 0;
 }
 footer div {
   margin: 10px;
@@ -99,8 +117,111 @@ footer div {
   padding: 20px;
 }
 
+/* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
+main {
+  height: 100%;
+  background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex-grow: 1;
+}
+
+.background-opacity {
+  height: 100%;
+  background-color: rgba(225, 225, 225, 0.5);
+}
+
 @media screen and (min-width: 768px) {
   #footer-logo {
     display: none;
   }
+
+  .background-opacity {
+    height: 100%;
+    background-color: rgba(225, 225, 225, 0.5);
+    margin-bottom: 50px;
+  }
 }
+
+/* ------ FIN DU CSS COMMUN ------ */
+
+/* RANKING PAGE  */
+
+.hall-of-fame-container {
+  width: 60%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hall-of-fame-container h1 {
+  width: 100%;
+  padding: 10px 0px;
+  margin: 5% auto 0px auto;
+  text-align: center;
+  font-family: 'Arimo';
+  font-size: 3vw;
+  background-color: rgba(225, 225, 225, 0.75);
+  border-radius: 5px;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+  background-color: rgba(225, 225, 225, 0.75);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px auto 0px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .hall-of-fame-container {
+    width: 60%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hall-of-fame-container table {
+  width: 50%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+.hall-of-fame-container td,
+th {
+  /* border: 1px solid black; */
+  padding: 5px;
+}
+
+.hall-of-fame-container td:nth-child(1) {
+  text-align: center;
+}
+
+.playBtn {
+  align-self: flex-end;
+  margin-top: 5%;
+}
+
+.playBtn button {
+  border: 1px solid #e40e21;
+  border-radius: 5%;
+  width: 100px;
+  height: 50px;
+  background-color: #e40e21;
+  font-size: 1.5vw;
+}
+
+.playBtn button a {
+  text-decoration: none;
+  color: white;
+}
+
+/* END RANKING PAGE */
