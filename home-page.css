@@ -1,0 +1,68 @@
+
+.divButton {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  text-align: center;
+
+}
+.designButton1,
+.designButton2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+  width: 100px;
+  height: 80px;
+  color: white;
+  background-color: #e40e21;
+  border-radius: 15px;
+  font-family: "Arimo";
+  border-width: 10px;
+  border-color: #e40e21;
+  border-style: solid;
+  position: relative;
+  margin-top: 20px;
+  
+}
+.designButton1{
+  margin-right: 50px;
+}
+
+.image{
+  display:none;
+}
+
+.designButton1:hover .buttonName{
+display: none
+}
+.designButton2:hover .buttonName{
+  display: none
+  }
+.designButton1:hover{
+background-image:url('Pictures/MugSolo.png');
+background-size: contain;
+background-repeat: no-repeat ;
+background-position: center;
+background-color: #e40e21;
+}
+
+.designButton2:hover{
+  background-image:url('Pictures/Mug2.png');
+  background-size: contain;
+  background-repeat: no-repeat ;
+  background-position: center;
+  background-color: #e40e21;
+  
+} 
+
+.rules{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  background-color: aliceblue;
+  margin: 100px auto 0px;
+}
