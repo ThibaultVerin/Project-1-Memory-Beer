@@ -40,7 +40,7 @@ header {
 header ul li {
   list-style: none;
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-family: Arimo;
 }
 header ul li a {
@@ -52,13 +52,16 @@ header ul li a {
   width: 100%;
   text-align: center;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px 0 20px;
 }
 
 .title-desktop {
   display: none;
 }
 #burger {
-  position: absolute;
   left: 10px;
   cursor: pointer;
 }
@@ -72,11 +75,20 @@ header ul li a {
 .binch {
   margin-left: 10px;
 }
+.binch img {
+  width: 60px;
+  height: 60px;
+}
 
 @media screen and (min-width: 768px) {
   #burger-logo {
     display: none;
   }
+  #binch-desktop img {
+    width: 90px;
+    height: 90px;
+  }
+
   #navbar {
     display: flex;
     justify-content: space-between;
@@ -93,7 +105,10 @@ header ul li a {
     color: white;
   }
   .binch {
-    margin-left: 10px;
+    margin-left: 5px;
+  }
+  .title-desktop {
+    padding-left: 50px;
   }
 }
 @media screen and (min-width: 900px) {
@@ -128,7 +143,7 @@ footer div {
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
 main {
-  background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
+  background-image: url('Pictures/fond-test2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
