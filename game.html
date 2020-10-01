@@ -3,13 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="gameStyle.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Andika&family=Arimo&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet"/>
-    <title>Memory-Beer-Game</title>
+    <link rel="stylesheet" href="gameStyle.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andika&family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Memory Beer</title>
   </head>
   <body>
-    <header></header> <!-- remplacer par le header-->
+    <header>
+      <div id="burger-logo">
+        <div id="burger">
+          <i class="fas fa-bars fa-2x"></i>
+        </div>
+        <div class="title">
+          <h1 id="titre-memory">Memory Beer</h1>
+        </div>
+      </div>
+      <nav id="navbar">
+        <div class="binch">
+          <img
+            src="Pictures/iconfinder_32_-_Harry_Potter_-_Colour_-_Butterbeer_2730343.png"
+            width="90"
+            height="90"
+          />
+        </div>
+        <div class="title-desktop">
+          <h1 id="titre-memory">Memory Beer</h1>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ranking.html">Rank</a></li>
+          <li><a href="aboutUs.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="background-opacity">
     
     <div class="game-info">Player 1 : </div>
     <div class="game-container">
@@ -111,10 +147,29 @@
       </div>
        <div class="jauge"></div>
     </div>
-      
-  </body>
-  <footer></footer>
+
+  </div>
+</main>
+
+<footer>
+  <div id="social-med">
+    <i class="fab fa-facebook fa-3x"></i>
+    <i class="fab fa-github fa-3x"></i>
+    <i class="fab fa-google-play fa-3x"></i>
+  </div>
+</footer>
+<!-- Ce script permet d'ajouter l'icone burger menu -->
+<script
+  src="https://kit.fontawesome.com/74a88b868b.js"
+  crossorigin="anonymous"
+  SameSite="Lax"
+></script>
+<!-- Ce script permet de faire d'afficher le contenu du burger menu après le click -->
+<script src="script.js"></script>
+</body>
 </html>
+
+      
 
 <!--15" https://youtu.be/28VfzEiJgy4
   https://acegif.com/wp-content/gif/beer-1.gif
