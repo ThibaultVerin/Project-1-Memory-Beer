@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="aboutUsStyle.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Andika&family=Arimo&display=swap"
       rel="stylesheet"
@@ -13,14 +14,44 @@
       href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
       rel="stylesheet"
     />
+
+    <title>Memory Beer</title>
   </head>
 
   <body>
-    <header></header>
-    <h1 id="about-title">The Creators</h1>
+    <header>
+      <div id="burger-logo">
+        <div id="burger">
+          <i class="fas fa-bars fa-2x"></i>
+        </div>
+        <div class="title">
+          <h1 id="titre-memory">Memory Beer</h1>
+        </div>
+      </div>
+      <nav id="navbar">
+        <div class="binch">
+          <img
+            src="Pictures/iconfinder_32_-_Harry_Potter_-_Colour_-_Butterbeer_2730343.png"
+            width="90"
+            height="90"
+          />
+        </div>
+        <div class="title-desktop">
+          <h1 id="titre-memory">Memory Beer</h1>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ranking.html">Rank</a></li>
+          <li><a href="aboutUs.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="background-opacity">
+        <h1 id="about-title">The Creators</h1>
 
-    <div id="creators">
-        <div class="cardCreator">
+        <div id="creators">
+          <div class="cardCreator">
             <h2>Louise</h2>
             <img
               src="/home/verin/Projet_1/Memory-Beer/Pictures/zebre.svg"
@@ -35,8 +66,8 @@
               nostrum rerum dolores tempore ipsum, nulla aperiam beatae maiores
               reiciendis? Ex, corporis nobis.
             </p>
-        </div>
-        <div class="cardCreator">
+          </div>
+          <div class="cardCreator">
             <h2>Antoine</h2>
             <img
               src="/home/verin/Projet_1/Memory-Beer/Pictures/canard.svg"
@@ -50,8 +81,8 @@
               nostrum! Assumenda animi rerum inventore necessitatibus, porro et
               ipsa nihil pariatur.
             </p>
-        </div>
-        <div class="cardCreator">
+          </div>
+          <div class="cardCreator">
             <h2>Thomas</h2>
             <img
               src="/home/verin/Projet_1/Memory-Beer/Pictures/taureau.svg"
@@ -66,8 +97,8 @@
               Rem beatae fugiat optio dolorem voluptas ad, vitae quod nam quasi
               porro facere? Est!
             </p>
-        </div>
-        <div class="cardCreator">
+          </div>
+          <div class="cardCreator">
             <h2>Jean</h2>
             <img
               src="/home/verin/Projet_1/Memory-Beer/Pictures/singe.svg"
@@ -82,8 +113,8 @@
               excepturi laudantium voluptates illo velit similique, dolorem
               natus nobis nemo ea fuga incidunt.
             </p>
-        </div>
-        <div class="cardCreator">
+          </div>
+          <div class="cardCreator">
             <h2>Thibault</h2>
             <img
               src="/home/verin/Projet_1/Memory-Beer/Pictures/cochon.svg"
@@ -99,9 +130,24 @@
               nesciunt, voluptatibus delectus. Dolores, ratione. Minus, esse
               totam.
             </p>
+          </div>
         </div>
-      </ul>
-    </div>
-    <footer></footer>
+      </div>
+    </main>
+
+    <footer>
+      <div id="social-med">
+        <i class="fab fa-facebook fa-3x"></i>
+        <i class="fab fa-github fa-3x"></i>
+        <i class="fab fa-google-play fa-3x"></i>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/74a88b868b.js"
+      crossorigin="anonymous"
+      SameSite="Lax"
+    ></script>
+    <!-- Ce script permet de faire d'afficher le contenu du burger menu après le click -->
+    <script src="script.js"></script>
   </body>
 </html>

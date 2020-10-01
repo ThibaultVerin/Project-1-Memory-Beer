@@ -1,21 +1,3 @@
-/*Taking off the margin and padding of the page to the full hand on the element's margin/padding*/
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  height: 100px;
-  background-color: #e40e21;
-}
-footer {
-  height: 100px;
-  background-color: #e40e21;
-}
-
-/* Background-image */
-
 /* About Us Headline */
 
 #about-title {
@@ -25,7 +7,7 @@ footer {
   text-align: center;
   border: 3px solid #e40e21;
   border-radius: 4px;
-  margin: 40px 50px;
+  margin: 0 50px 40px;
   padding: 20px 0;
 }
 
