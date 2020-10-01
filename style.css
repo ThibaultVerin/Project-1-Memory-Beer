@@ -115,7 +115,7 @@ footer div {
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
 main {
-  height: 100%;
+  /* height: 100%; */
   background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
   background-size: cover;
   background-repeat: no-repeat;
