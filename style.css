@@ -62,6 +62,9 @@ header ul li a {
   left: 10px;
   cursor: pointer;
 }
+.binch {
+  margin-left: 10px;
+}
 
 @media screen and (min-width: 768px) {
   #burger-logo {
@@ -83,7 +86,13 @@ header ul li a {
     color: white;
   }
   .binch {
-    margin-left: 30px;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .title-desktop {
+    display: block;
+    color: white;
   }
 }
 /* Fin du header */
@@ -112,6 +121,7 @@ footer div {
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
 main {
+
   background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
   background-size: cover;
   background-repeat: no-repeat;
