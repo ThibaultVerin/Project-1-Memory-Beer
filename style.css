@@ -61,6 +61,9 @@ header ul li a {
   left: 10px;
   cursor: pointer;
 }
+.binch {
+  margin-left: 10px;
+}
 
 @media screen and (min-width: 768px) {
   #burger-logo {
@@ -82,7 +85,13 @@ header ul li a {
     color: white;
   }
   .binch {
-    margin-left: 30px;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .title-desktop {
+    display: block;
+    color: white;
   }
 }
 /* Fin du header */
