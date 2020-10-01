@@ -19,7 +19,9 @@ Lorsque vous souhaitez envoyez vos fichiers sur Github tout en restant à jour d
 - git pull <!-- pour récupérer les fichiers présents sur la branche distante dev>
   <!-- à ce moment là, il est possible d'avoir un conflit entre la branche distante Dev et la branche locale Dev. Régler le conflit (VS code permet de le régler facilement car il colore les anciennes lignes de code et les nouvelles). Dans tous les cas il faut garder ce qui vient de la branche distante Dev -->
   <!-- La branche locale dev est désormais à jour -->
-  3 - Retourner sur votre branche sur laquelle vous travaillez
+
+3 - Retourner sur votre branche sur laquelle vous travaillez
+
 - git checkout votre_nom_de_branche
 - git merge dev <!-- Permet de mettre à jour vos fichiers par rapport à la branche Dev. Il y aura peut-être des conflits à régler -->
 
