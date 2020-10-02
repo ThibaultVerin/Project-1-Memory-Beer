@@ -63,6 +63,25 @@
   text-align: justify;
 }
 
+.aboutUsButton {
+  background-color: #fff;
+  color: #e40e21;
+  border: 1px solid #e40e21;
+  border-radius: 5%;
+  width: 125px;
+  height: 75px;
+  margin: 20px 0 40px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.aboutUsButton:hover {
+  background-color: #e40e21;
+  color: #fff;
+  font-weight: bolder;
+}
+
 @media screen and (min-width: 768px) {
   #about-title {
     margin: 40px 80px;
@@ -84,6 +103,13 @@
   .cardCreator:nth-child(5) {
     margin: 30px auto 0;
   }
+
+  .aboutUsButton {
+    position: absolute;
+    top: 140%;
+    right: 65px;
+    width: 150px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -97,5 +123,11 @@
 
   .cardCreator {
     width: 38%;
+  }
+
+  .aboutUsButton {
+    position: absolute;
+    width: 175px;
+    right: 100px;
   }
 }
