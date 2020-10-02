@@ -4,6 +4,10 @@
 :root {
   --primary-color: #df2935;
   --text-color: white;
+  --titleMobile: 30px;
+  --textMobile: 20px;
+  --titleDesktop: 40px;
+  --textDesktop: 25px;
 }
 
 * {
@@ -175,9 +179,15 @@ footer {
   justify-content: center;
   flex-shrink: 0;
 }
-footer div {
-  margin: 10px;
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+#copyright {
+  margin-bottom: 10px;
+}
+
 #social-med i {
   padding: 20px;
 }
@@ -227,8 +237,10 @@ main {
   margin: 5% auto 0px auto;
   text-align: center;
   font-family: 'Arimo';
-  font-size: 3vw;
+  font-size: var(--titleMobile);
   background-color: rgba(225, 225, 225, 0.75);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
   border-radius: 5px;
 }
 
@@ -242,6 +254,26 @@ main {
   margin: 10px auto 0px auto;
 }
 
+.hall-of-fame-container table {
+  width: 50%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.hall-of-fame-container td,
+th {
+  /* border-bottom: 1px solid var(--primary-color); */
+  padding: 5px;
+  font-family: 'Arimo';
+  text-align: center;
+  font-size: var(--textMobile);
+}
+
+.hall-of-fame-container td:nth-child(1) {
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .hall-of-fame-container {
     width: 60%;
@@ -250,24 +282,39 @@ main {
     flex-direction: column;
     align-items: center;
   }
-}
 
-.hall-of-fame-container table {
-  width: 50%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 1.5vw;
-}
+  .hall-of-fame-container h1 {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 5% auto 0px auto;
+    text-align: center;
+    font-family: 'Arimo';
+    font-size: var(--titleDesktop);
+    background-color: rgba(225, 225, 225, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-.hall-of-fame-container td,
-th {
-  /* border: 1px solid black; */
-  padding: 5px;
-}
+    border-radius: 5px;
+  }
 
-.hall-of-fame-container td:nth-child(1) {
-  text-align: center;
+  .hall-of-fame-container td,
+  th {
+    /* border-bottom: 1px solid var(--primary-color); */
+    padding: 5px;
+    font-family: 'Arimo';
+    text-align: center;
+    font-size: var(--textDesktop);
+  }
+
+  .playBtn button {
+    border: 1px solid var(--primary-color);
+    border-radius: 5%;
+    width: 150px;
+    height: 75px;
+    background-color: var(--primary-color);
+    font-size: var(--textDesktop);
+    color: var(--text-color);
+    cursor: pointer;
+  }
 }
 
 .playBtn {
@@ -278,15 +325,16 @@ th {
 .playBtn button {
   border: 1px solid var(--primary-color);
   border-radius: 5%;
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: 75px;
   background-color: var(--primary-color);
-  font-size: 1.5vw;
+  font-size: var(--textMobile);
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 .playBtn button a {
   text-decoration: none;
-  color: var(--text-color);
 }
 
 /* END RANKING PAGE */
