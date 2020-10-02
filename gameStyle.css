@@ -27,6 +27,10 @@
   border: solid;
 }
 
+.card:hover {
+  cursor: help;
+}
+
 .card {
   position: relative;
   background-color: none;
