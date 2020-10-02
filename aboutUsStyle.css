@@ -1,14 +1,16 @@
 /* About Us Headline */
 
 #about-title {
-  font-size: 35px;
+  font-size: 50px;
   font-family: 'Arimo';
   color: black;
   text-align: center;
-  border: 3px solid #e40e21;
-  border-radius: 4px;
-  margin: 0 50px 40px;
+  margin: auto;
   padding: 20px 0;
+  border-radius: 5px;
+  background-color: rgba(225, 225, 225, 0.75);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 60%;
 }
 
 /* End About Us Title */
@@ -20,7 +22,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 0 30px 40px;
+  margin: 0px auto;
+  width: 60%;
+  text-align: center;
 }
 
 .cardCreator {
@@ -29,11 +33,10 @@
   align-items: center;
   justify-content: space-around;
   font-family: Andika;
-  border: 3px solid #e40e21;
-  border-radius: 4px;
+  border-radius: 5px;
+  background-color: rgba(225, 225, 225, 0.75);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 20px 0;
-  border: 3px solid #e40e21;
-  border-radius: 4px;
   padding: 10px 20px 0;
   position: relative;
   transition-duration: 0.4s;
@@ -54,8 +57,8 @@
 }
 
 .aboutText {
-  background-color: #e40e20c9;
-  color: #fff;
+  background-color: #df2935d3;
+  color: var(--text-color);
   top: 0;
   bottom: 0;
   padding: 5px;
@@ -63,9 +66,29 @@
   text-align: justify;
 }
 
+.aboutUsButton {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5%;
+  width: 150px;
+  height: 75px;
+  color: var(--text-color);
+  margin: 20px 0 40px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.aboutUsButton a {
+  outline: none;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 @media screen and (min-width: 768px) {
   #about-title {
-    margin: 40px 80px;
+    margin: auto;
+    width: 60%;
   }
 
   #creators {
@@ -74,7 +97,8 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    margin: 30px 80px 40px;
+    margin: 0px auto;
+    width: 60%;
   }
 
   .cardCreator {
@@ -84,18 +108,23 @@
   .cardCreator:nth-child(5) {
     margin: 30px auto 0;
   }
+
+  .aboutUsButton {
+    position: absolute;
+    top: 140%;
+    right: 65px;
+    width: 150px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  #about-title {
-    margin: 40px 100px;
-  }
-
-  #creators {
-    margin: 30px 100px 40px;
-  }
-
   .cardCreator {
     width: 38%;
+  }
+
+  .aboutUsButton {
+    position: absolute;
+    width: 175px;
+    right: 100px;
   }
 }
