@@ -175,9 +175,15 @@ footer {
   justify-content: center;
   flex-shrink: 0;
 }
-footer div {
-  margin: 10px;
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+#copyright {
+  margin-bottom: 10px;
+}
+
 #social-med i {
   padding: 20px;
 }
