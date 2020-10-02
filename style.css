@@ -22,6 +22,9 @@ body {
 
 /* Pour faire un "sticky footer", nous avons mis le body en flex - column (header, main et footer sont les 3 items sur lequel flexbox est appliqué). On a appliqué un flex-grow: 1 sur main pour qu'il prenne le plus de place disponible & un flex-shrink : 0 sur le footer pour qu'il ait une dimension fixe*/
 
+h1 {
+  font-family: Arimo;
+}
 body {
   display: flex;
   flex-direction: column;
