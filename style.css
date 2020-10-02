@@ -1,4 +1,11 @@
 /* ------ DEBUT DU CSS COMMUN ------ */
+
+/*-------BONNES PRATIQUES DECLARATION VARIABLES CSS------*/
+:root {
+  --primary-color: #df2935;
+  --text-color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +26,7 @@ body {
 /* -- Début du header */
 
 header {
-  background-color: #e40e21;
+  background-color: var(--primary-color);
   height: 100px;
   display: flex;
   flex-direction: row;
@@ -40,33 +47,89 @@ header {
 header ul li {
   list-style: none;
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-family: Arimo;
 }
 header ul li a {
   padding: 10px;
   text-decoration: none;
-  color: white;
+  color: var(--text-color);
 }
 #burger-logo {
   width: 100%;
   text-align: center;
-  color: white;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px 0 20px;
 }
 
 .title-desktop {
   display: none;
 }
 #burger {
-  position: absolute;
   left: 10px;
   cursor: pointer;
 }
+.binch {
+  margin-left: 10px;
+}
+
+.linkNav {
+  color: var (var(--text-color));
+}
+.binch {
+  margin-left: 10px;
+}
+.binch img {
+  width: 60px;
+  height: 60px;
+}
+
+/*-----------------------TEST DU SHAKE-------------------*/
+
+.binch img:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/*----------------------------FIN TEST DU SHAKE-----------------*/
 
 @media screen and (min-width: 768px) {
   #burger-logo {
     display: none;
   }
+  #binch-desktop img {
+    width: 90px;
+    height: 90px;
+  }
+
   #navbar {
     display: flex;
     justify-content: space-between;
@@ -80,10 +143,19 @@ header ul li a {
   }
   #navbar ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
   }
   .binch {
-    margin-left: 30px;
+    margin-left: 5px;
+  }
+  .title-desktop {
+    padding-left: 50px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .title-desktop {
+    display: block;
+    color: var(--text-color);
   }
 }
 /* Fin du header */
@@ -93,8 +165,8 @@ footer {
   /* position: absolute; */
   bottom: 0;
   width: 100%;
-  color: white;
-  background-color: #e40e21;
+  color: var(--text-color);
+  background-color: var(--primary-color);
   height: 100px;
   display: flex;
   align-items: center;
@@ -112,7 +184,7 @@ footer div {
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
 main {
-  background-image: url('Pictures/bar_drawing_bartender_lights_icons_cartoon_design_6834896.jpg');
+  background-image: url('Pictures/fond-test2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -204,17 +276,17 @@ th {
 }
 
 .playBtn button {
-  border: 1px solid #e40e21;
+  border: 1px solid var(--primary-color);
   border-radius: 5%;
   width: 100px;
   height: 50px;
-  background-color: #e40e21;
+  background-color: var(--primary-color);
   font-size: 1.5vw;
 }
 
 .playBtn button a {
   text-decoration: none;
-  color: white;
+  color: var(--text-color);
 }
 
 /* END RANKING PAGE */
