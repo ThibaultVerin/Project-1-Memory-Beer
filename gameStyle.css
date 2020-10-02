@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   padding-top: 25px;
+  padding-bottom: 25px;
 }
 .game-container {
   display: grid;
@@ -25,10 +26,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   border: solid;
-}
-
-.card:hover {
-  cursor: help;
 }
 
 .card {
@@ -60,6 +57,10 @@
     display: flex;
     justify-content: center;
     padding-top: 50px;
+  }
+
+  .card:hover {
+    cursor: url('Pictures/bottle-opener-cursor.cur'), pointer;
   }
 
   .card {
