@@ -166,7 +166,7 @@ footer {
   bottom: 0;
   width: 100%;
   color: var(--text-color);
-  background-color: var(--primary-Color);
+  background-color: var(--primary-color);
   height: 100px;
   display: flex;
   align-items: center;
