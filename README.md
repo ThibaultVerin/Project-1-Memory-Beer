@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# Memory-Beer
+=======
 # Memory-Beer
 
 #Squelette HTML/CSS
@@ -34,3 +37,4 @@ Lorsque vous souhaitez envoyez vos fichiers sur Github tout en restant à jour d
 
 5 - Allez sur github et faire un pull request. Il ne devrait pas y avoir de conflit à cette étape.
 6 - Faire valider votre pull request par quelqu'un de l'équipe avant de faire une fusion de votre branche distante avec la branche distante dev (merge)
+>>>>>>> c9edaf3d117238c0b4ef3870fb87263e79ce2d49

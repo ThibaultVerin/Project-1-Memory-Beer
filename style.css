@@ -22,6 +22,10 @@ body {
 
 /* Pour faire un "sticky footer", nous avons mis le body en flex - column (header, main et footer sont les 3 items sur lequel flexbox est appliqué). On a appliqué un flex-grow: 1 sur main pour qu'il prenne le plus de place disponible & un flex-shrink : 0 sur le footer pour qu'il ait une dimension fixe*/
 
+h1 {
+  font-family: Patrick Hand;
+  font-size: 60px;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -30,7 +34,7 @@ body {
 /* -- Début du header */
 
 header {
-  background-color: var(--primary-color);
+  background-color: #f26d3d;
   height: 100px;
   display: flex;
   flex-direction: row;
@@ -52,7 +56,7 @@ header ul li {
   list-style: none;
   padding: 10px;
   font-size: 15px;
-  font-family: Arimo;
+  font-family: Patrick Hand;
 }
 header ul li a {
   padding: 10px;
@@ -170,22 +174,24 @@ footer {
   bottom: 0;
   width: 100%;
   color: var(--text-color);
-  background-color: var(--primary-color);
+  background-color: #f26d3d;
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   justify-content: center;
   flex-shrink: 0;
+  font-family: Patrick Hand;
 }
-#footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 #copyright {
   margin-bottom: 10px;
+}
+
+#social-med {
+  display: flex;
+  flex-direction: row;
 }
 
 #social-med i {
@@ -194,16 +200,17 @@ footer {
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
 main {
-  background-image: url('Pictures/fond-test2.jpg');
+  /* background-image: url('Pictures/fond-test2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; */
   flex-grow: 1;
+  background-color: #f26d3d;
 }
 
 .background-opacity {
   height: 100%;
-  background-color: rgba(225, 225, 225, 0.5);
+  /* background-color: rgba(225, 225, 225, 0.5); */
   padding-top: 40px;
 }
 
@@ -214,7 +221,7 @@ main {
 
   .background-opacity {
     height: 100%;
-    background-color: rgba(225, 225, 225, 0.5);
+    /* background-color: rgba(225, 225, 225, 0.5); */
     margin-bottom: 50px;
   }
 }
