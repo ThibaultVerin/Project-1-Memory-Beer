@@ -1,75 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="home-page.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <title>Memory Beer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="indexStyle.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
-    href="https://fonts.googleapis.com/css2?family=Andika&family=Arimo&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+      href="https://fonts.googleapis.com/css2?family=Andika&family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+  
 
-</head>
-<body>
+    <title>Memory Beer</title>
+  </head>
+  <body>
     <header>
-        <div id="burger-logo">
-          <div id="burger">
-            <i class="fas fa-bars fa-2x"></i>
-          </div>
-          <div class="title">
-            <h1 id="titre-memory">Memory Beer</h1>
-          </div>
+      <div id="burger-logo">
+        <div id="burger">
+          <i class="fas fa-bars fa-2x"></i>
         </div>
-        <div class="binch">
-            <img
-              src="Pictures/iconfinder_32_-_Harry_Potter_-_Colour_-_Butterbeer_2730343.png"
+        <div class="title">
+          <h1 id="titre-memory">Memory Beer</h1>
+        </div>
+      </div>
+      <div class="binch">
+          <img
+            src="Pictures/iconfinder_32_-_Harry_Potter_-_Colour_-_Butterbeer_2730343.png"
+            
+          />
+        </div>
+      <nav id="navbar">
+        
+        <div class="title-desktop">
+          <h1 id="titre-memory"><span style="font-size: 80px">M</span>emory <span style="font-size: 80px">B</span>eer</h1>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="game.html">Play</a></li>
+          <li><a href="ranking.html">Rank</a></li>
+          <li><a href="aboutUs.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+      <div class="background-opacity">
+
+          <div class = "index-container">
+            <div class ="indexBtn" onclick="window.location.href='game.html'"> 
+              1 Player                    
+            </div>
+               <div class= "indexBtn">
+               
+               2 Players
               
-            />
+               </div>
+           
+           <div class="indexBtn" id="tutorialBtn" onclick=startTutorial()>  How to Play ?
+           </div>
+   
           </div>
-        <nav id="navbar">
-          
-          <div class="title-desktop">
-            <h1 id="titre-memory">Memory Beer</h1>
+            
+    
+       <div class="main-card-container">
+        <div class="card-container">
+          <div class="card" onclick=step1Tutorial()>
+            <img class="card-face" src="Pictures\cards\bouteille10.png">
+            
           </div>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="game.html">Play</a></li>
-            <li><a href="ranking.html">Rank</a></li>
-            <li><a href="aboutUs.html">About</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille2.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille3.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille4.png">
+            
+          </div>
+          <div class="card" onclick=step3Tutorial()>
+            <img class="card-face" src="Pictures\cards\bouteille5.png">
+            
+          </div>
+          <div class="card" onclick=step2Tutorial()>
+            <img class="card-face" src="Pictures\cards\bouteille6.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille7.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille8.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille10.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille2.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille3.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille4.png">
+            
+          </div>
+          <div class="card" onclick="step4Tutorial()">
+            <img class="card-face" src="Pictures\cards\bouteille5.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille6.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille7.png">
+            
+          </div>
+          <div class="card">
+            <img class="card-face" src="Pictures\cards\bouteille8.png">
+            
+          </div>
+           
+        </div>
 
-        <div class="background-opacity"> 
-<!-- Div pour gérer les boutons player 1 et 2 players   -->      
+        <!-- GESTION DE LA JAUGE -->
+        <div class="jauge-container">
+            <img class="jauge-mousse" src="Pictures/jauge/jauge-mousse3.png"/>
+            <img class="jauge-corps" src="Pictures/jauge/jauge-corps3.png" />
+          </div>
 
-            <div class = "divButton">
-              <!-- Bouton player 1  -->
-              <button class ="designButton1" onclick="window.location.href='game.html'"> 
-              <span class= "buttonName">1 Player 
-              </span>                   
-              </button>
-<!-- Bouton 2 players  -->
-              <button class= "designButton2">
-              <span class= "buttonName">
-              2 Players
-              </span>
-              </button>
-            </div>  
-<!-- Insertion de la vidéo des régles du memory  -->
-            <div class = "rules">
-              <iframe width="640" height="300" src="https://www.youtube.com/embed/wIJ2Y45JuAg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>" 
-            </div>    
-      </main>   
+      </div> 
+       
     </div>
+  </div>
+    
+
+  </div>
+</main>
+
 <footer>
   <div id="footer-container">
     <div id="social-med">
@@ -84,13 +168,24 @@
     </div>
   </div>
 </footer>
-  <!-- Ce script permet d'ajouter l'icone burger menu -->
-  <script
-    src="https://kit.fontawesome.com/74a88b868b.js"
-    crossorigin="anonymous"
-    SameSite="Lax"
-  ></script>
-  <!-- Ce script permet de faire d'afficher le contenu du burger menu après le click -->
-  <script src="script.js"></script>
+<!-- Ce script permet d'ajouter l'icone burger menu -->
+<script
+  src="https://kit.fontawesome.com/74a88b868b.js"
+  crossorigin="anonymous"
+  SameSite="Lax"
+></script>
+<!-- Ce script permet de faire d'afficher le contenu du burger menu après le click -->
+<script src="script.js"></script>
+<script src="tutorial-script.js"></script>
 </body>
 </html>
+
+      
+
+<!--15" https://youtu.be/28VfzEiJgy4
+  https://acegif.com/wp-content/gif/beer-1.gif
+----------------
+idées :
+#cartes " dessous de verre " ( des ronds pas des rectangles)
+#un bouton WC pour rediriger vers une page livre d'or
+#footer : taxi qui se deplace>

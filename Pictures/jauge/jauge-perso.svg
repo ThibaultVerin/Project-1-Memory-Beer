@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg3475"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="jauge-perso.svg">
+  <defs
+     id="defs3469" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4721689"
+     inkscape:cx="338.9049"
+     inkscape:cy="358.80887"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="755"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3472">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffd33d;stroke-width:0.471482;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4038"
+       width="31.756557"
+       height="109.72932"
+       x="72.152802"
+       y="121.29749"
+       rx="0.083679371"
+       ry="0" />
+    <rect
+       style="fill:#fbbe25;fill-opacity:1;stroke-width:0.471482;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4042"
+       width="31.756557"
+       height="109.72932"
+       x="103.80707"
+       y="121.29749"
+       rx="0.083679371"
+       ry="0" />
+    <rect
+       style="fill:#ffd33d;stroke-width:0.222901;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4044"
+       width="31.756565"
+       height="24.52544"
+       x="103.80707"
+       y="96.772041"
+       rx="0.0836794"
+       ry="0" />
+    <rect
+       style="fill:#feed5a;fill-opacity:1;stroke-width:0.2229;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4046"
+       width="31.756557"
+       height="24.525442"
+       x="72.152802"
+       y="-121.29749"
+       rx="0.083679371"
+       ry="0"
+       transform="scale(1,-1)" />
+    <g
+       id="g2867"
+       transform="matrix(0.26458333,0,0,0.26458333,36.340389,65.821091)">
+      <path
+         d="m 250.372,11.174 c -6.729,-2.838 -13.979,-4.308 -21.445,-4.308 -23.64,0 -44.243,15.035 -52.017,36.485 -23.811,5.25 -41.556,26.518 -41.556,51.855 V 116.98 L 256,148.389 282.247,74.714 256,7.382 c -1.948,1.141 -3.828,2.405 -5.628,3.792 z"
+         fill="#fef7cb"
+         id="path2863" />
+      <path
+         d="M 336.2,42.78 C 330.985,18.364 309.246,0 283.297,0 273.539,0 264.168,2.593 256,7.382 v 141.007 l 120.77,-28.874 v -27.6 c 0,-24.353 -17.492,-44.698 -40.57,-49.135 z"
+         fill="#fee0bc"
+         id="path2865" />
+    </g>
+    <path
+       d="m 129.78011,116.8997 c -3.45043,0 -6.24734,-2.79718 -6.24734,-6.24735 V 97.442768 h 12.49469 v 13.209582 c 0,3.45017 -2.79718,6.24735 -6.24735,6.24735 z"
+       fill="#fee0bc"
+       id="path2889-0"
+       style="stroke-width:0.264583" />
+    <rect
+       style="fill:#fbbe25;fill-opacity:1;stroke-width:0.466863;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4092"
+       width="31.756556"
+       height="109.72932"
+       x="103.80707"
+       y="129.44742"
+       rx="5.1498523"
+       ry="8.1499357" />
+    <rect
+       style="fill:#ffd33d;fill-opacity:1;stroke-width:0.464132;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4103"
+       width="31.386105"
+       height="109.72932"
+       x="72.420967"
+       y="129.44742"
+       rx="5.0897775"
+       ry="8.1499357" />
+    <rect
+       style="fill:#ffd33d;stroke-width:0.176389;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4114"
+       width="19.886122"
+       height="24.52544"
+       x="83.920944"
+       y="214.65131"
+       rx="0.052400462"
+       ry="0" />
+    <rect
+       style="fill:#fbbe25;fill-opacity:1;stroke-width:0.162703;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect4116"
+       width="16.920191"
+       height="24.525442"
+       x="103.80707"
+       y="-239.17674"
+       rx="0.04458515"
+       ry="0"
+       transform="scale(1,-1)" />
+  </g>
+</svg>

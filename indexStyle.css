@@ -1,0 +1,154 @@
+/* TUTORIAL CSS */
+
+.index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+.indexBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 150px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+  cursor: pointer;
+}
+
+#tutorialBtn a {
+  text-decoration: none;
+  color: white;
+}
+
+#tutorial {
+  width: 200px;
+  margin: auto;
+  background-color: white;
+}
+
+/* ----- Animation clignotemment -----  */
+@keyframes clignoter {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card-clignote {
+  border-radius: 10px;
+  height: 120px;
+  width: 100px;
+  margin-bottom: 20px;
+  background-color: #f28a2e;
+  box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.2);
+  animation-duration: 0.8s;
+  animation-name: clignoter;
+  animation-iteration-count: 4;
+  transition: none;
+}
+
+/* ----- FIN Animation clignottement ----- */
+
+/* ----- Plateau de jeu ----- */
+
+.main-card-container {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  width: 765px;
+  height: 600px;
+  margin: auto;
+  /* background-color: rgba(225, 225, 225, ); */
+  background-color: #f2b705;
+  /* background-color: white; */
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  /* border: 25px solid rgba(242, 109, 61, 0.65); */
+}
+
+.jauge-container {
+  align-self: flex-end;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  /* justify-content: center; */
+  /* border: 1px solid black; */
+  /* background-color: rgba(225, 225, 225, 0.9); */
+  height: 0%;
+  max-height: 550px;
+  width: 15%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-top: 10px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.jauge-mousse {
+  height: 100px;
+  width: 100%;
+  flex-grow: 1;
+}
+.jauge-corps {
+  height: 100%;
+  width: 100%;
+  flex-shrink: 1;
+  /* object-fit: contain; */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+  height: 570px;
+  width: 75%;
+  /* margin: auto; */
+  border-radius: 10px;
+}
+
+.card {
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  height: 120px;
+  width: 100px;
+  margin-bottom: 20px;
+  background-color: #f28a2e;
+  box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-face {
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+  padding-top: 10px;
+  margin: auto;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+/* ----- FIN plateau de jeu ----- */

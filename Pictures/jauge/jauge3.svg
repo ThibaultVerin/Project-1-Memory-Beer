@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg2090"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="jauge3.svg"
+   inkscape:export-filename="/Users/jean/Desktop/JS/Memory-Beer/Pictures/jauge3.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2084" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9332003"
+     inkscape:cx="389.13293"
+     inkscape:cy="324.21749"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="755"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2087">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#fef7cb;fill-opacity:1;stroke-width:0.755747;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect2658"
+       width="40.328018"
+       height="23.678434"
+       x="72.374863"
+       y="71.115288"
+       rx="8.4876242"
+       ry="6.6033878" />
+    <rect
+       style="fill:#ffd33d;stroke-width:0.580591;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect2653"
+       width="40.25103"
+       height="136.44742"
+       x="72.451851"
+       y="82.920692"
+       rx="0.31626704"
+       ry="0" />
+    <rect
+       style="fill:#fbbe25;stroke-width:0.408479;stroke-linejoin:round;paint-order:fill markers stroke;fill-opacity:1"
+       id="rect2653-8"
+       width="19.923937"
+       height="136.44742"
+       x="72.451851"
+       y="82.920692"
+       rx="0.15654965"
+       ry="0" />
+  </g>
+</svg>
