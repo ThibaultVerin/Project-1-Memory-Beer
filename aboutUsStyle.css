@@ -1,7 +1,7 @@
 /* About Us Headline */
 
 #about-title {
-  font-size: 50px;
+  font-size: var(--titleMobile);
   font-family: 'Arimo';
   color: black;
   text-align: center;
@@ -39,7 +39,6 @@
   margin: 20px 0;
   padding: 10px 20px 0;
   position: relative;
-  transition-duration: 0.4s;
 }
 
 .cardCreator h2 {
@@ -47,8 +46,9 @@
   margin-bottom: 5px;
 }
 
-.aboutText {
-  display: none;
+.cardCreator:hover {
+  margin-top: 40px;
+  transform: scale(1.1);
 }
 
 .cardCreator:hover .aboutText {
@@ -57,6 +57,7 @@
 }
 
 .aboutText {
+  display: none;
   background-color: #df2935d3;
   color: var(--text-color);
   top: 0;
@@ -70,10 +71,10 @@
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: 5%;
-  width: 150px;
+  width: 243px;
   height: 75px;
   color: var(--text-color);
-  margin: 20px 0 40px;
+  margin: 20px auto 40px;
   font-size: 20px;
   text-align: center;
   cursor: pointer;
@@ -111,9 +112,11 @@
 
   .aboutUsButton {
     position: absolute;
-    top: 140%;
-    right: 65px;
-    width: 150px;
+    top: 125%;
+    right: 2%;
+    width: 230px;
+    margin-bottom: 40px;
+    margin-right: 2%;
   }
 }
 
@@ -124,7 +127,8 @@
 
   .aboutUsButton {
     position: absolute;
-    width: 175px;
-    right: 100px;
+    right: 2%;
+    width: 263px;
+    margin-right: 5%;
   }
 }
