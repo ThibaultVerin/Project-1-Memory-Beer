@@ -53,7 +53,6 @@
   margin: auto;
   transform: rotateY(180deg);
 }
-
 /* backface-visibility: hidden; car les deux images de la carte sont superposées et on ne veut pas voir l'image de fond */
 
 .card img {
@@ -67,7 +66,6 @@
 
 .card-back {
   height: 60%;
-  padding-top: 25px;
   margin: auto;
 }
 
