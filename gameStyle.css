@@ -1,5 +1,6 @@
 .main-card-container {
-  display: flex;
+  display: none;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   width: 75%;
@@ -11,7 +12,7 @@
 }
 
 .card-container {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
@@ -79,9 +80,94 @@
   display: none;
 }
 
+.playModal-container {
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.playModal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2b705;
+  width: 200px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+  cursor: pointer;
+}
+
+/* .playModal-input {
+  height: 30%;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: Andika;
+} */
+
+.playMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+
+.playerName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+}
+
+.playername input {
+  margin-left: 10px;
+  font-family: Andika;
+}
+
+.levelBtn {
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 80px;
+  margin: auto;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .main-card-container {
-    display: flex;
+    display: none;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     width: 765px;

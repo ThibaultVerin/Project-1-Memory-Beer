@@ -9,27 +9,49 @@ Ici le total de paires à 9 (au lieu de 8) pour ne jamais atteindre une taille d
 
 */
 
-const jaugeContainer = document.querySelector('.jauge-container');
-const jaugeMousse = document.querySelector('.jauge-mousse');
-const totalPaires = 9;
-let currentScore = 0;
+// const jaugeContainer = document.querySelector('.jauge-container');
+// const jaugeMousse = document.querySelector('.jauge-mousse');
+// const totalPaires = 9;
+// let currentScore = 0;
 
-jaugeMousse.addEventListener('mouseover', function () {
-  if (currentScore === 8) return;
-  currentScore += 1;
-  let currentPercent = (currentScore / totalPaires) * 100;
-  jaugeContainer.style.height = `${currentPercent}%`;
-  jaugeContainer.style.transition = `height 2s ease-out`;
-  console.log(currentScore);
+// function scoreCompteur() {
+//   currentScore = currentScore + 1;
+//   if (currentScore >= 8) return;
+//   let currentPercent = (currentScore / totalPaires) * 100;
+//   jaugeContainer.style.height = `${currentPercent}%`;
+//   jaugeContainer.style.transition = `height 2s ease-out`;
+//   console.log(currentScore);
+// }
+
+/* ----- END SCRIPT JAUGE ----- */
+
+// ----- START GAME -----
+
+const gameContainer = document.querySelector('.main-card-container');
+const playMenu = document.querySelector('.playMenu');
+
+const playerNameBtn = document.querySelector('#playerNameCompleted');
+playerNameBtn.addEventListener('click', () => {
+  const playerName = document.querySelector('#playerNameInput');
+  localStorage.setItem('name', `${playerName.value}`);
+  console.log(localStorage);
+  const selectDifficulty = document.querySelector('.playerName');
+  selectDifficulty.innerHTML = 'Select difficulty';
+  const levelBtn = document.querySelectorAll('.levelBtn');
+  for (let i = 0; i < levelBtn.length; i++) {
+    levelBtn[i].style.visibility = 'visible';
+    levelBtn[i].style.opacity = 1;
+    levelBtn[i].style.transition = 'opacity 1s ease';
+  }
 });
 
-/* 
-  - Pour l'instant la fonction s'exécute lorsque l'on survole la jauge => une fois le jeu fini elle doit se déclencher lorsque l'on trouve une paire
-  - A chaque exécution, le score actuel est incrémenté de 1
-  - La fonction calcul la taille de la jauge
-  - La nouvelle taille est appliquée avec une transition
-  - Si le score est de 8 (jeu fini), la fonction est interrompue grâce à return
-*/
+function startLevelOne() {
+  console.log(gameContainer);
+  playMenu.style = 'display: none';
+  gameContainer.style = 'display : flex';
+}
+
+// ----- END START GAME -----
 
 /* Récupération des images - carte face cachées / cartes avec icone de bières
  */
@@ -124,12 +146,15 @@ const displayCard = function () {
 };
 
 /*     - 3eme étape : via le data.index definit dans l'image on va déterminer si match ou non, si match remove eventListener, si pas match remove class et add setTimeout pour gérer la transition */
+let score = 5000;
 
 function match() {
   if (firstCard.dataset.index === secondCard.dataset.index) {
     firstCard.removeEventListener('click', displayCard);
     secondCard.removeEventListener('click', displayCard);
     console.log('its a match');
+    score = score + 10;
+    return score;
   } else {
     setTimeout(() => {
       firstCard.classList.remove('open');
@@ -141,3 +166,10 @@ function match() {
 for (let i = 0; i < arrayCard.length; i++) {
   arrayCard[i].addEventListener('click', displayCard);
 }
+
+//Fonction qui permet de stocker le score en local storage
+function endGame() {
+  localStorage.setItem('isOver', 'true');
+  localStorage.setItem('score', `${score}`);
+}
+endGame();

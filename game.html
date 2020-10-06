@@ -52,17 +52,41 @@
     </header>
     <main>
       <div class="background-opacity">
+
+      <div class = "playMenu">
+        <div class="playerName">
+          <label for="playerNameInput">Enter your name: </label>
+          <input type="text" id="playerNameInput"/>
+          <img src="Pictures/playBtn.png" alt="Submit logo" id="playerNameCompleted"/>
+        </div>
+
+        <div class= "levelBtn" onclick=startLevelOne()>   
+          Soft Mode
+          </div>
+        <div class= "levelBtn" onclick=startLevelTwo()>   
+          Medium Mode
+          </div>
+        <div class= "levelBtn" onclick=startLevelThree()>   
+          Drunk Mode
+          </div>
+      </div>
     
        <div class="main-card-container">
+        <div class="playModal-container">
+          <div class="playModal-box">
+            <p>Game Over !</p>
+          </div>
+          
+        </div>
         <div class="card-container">
 
         </div>
 
         <!-- GESTION DE LA JAUGE -->
-        <div class="jauge-container">
+        <!-- <div class="jauge-container">
           <img class="jauge-mousse" src="Pictures/jauge/jauge-mousse3.png"/>
           <img class="jauge-corps" src="Pictures/jauge/jauge-corps3.png" />
-        </div>
+        </div> -->
 
       </div> 
        
