@@ -105,6 +105,7 @@ function shuffle(arr) {
 shuffle(cardArray);
 
 const myContainer = document.querySelector('.card-container');
+
 for (let i = 0; i < cardArray.length; i++) {
   const myDiv = document.createElement('div');
   myContainer.appendChild(myDiv);
