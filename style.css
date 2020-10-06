@@ -24,8 +24,16 @@ body {
 
 h1 {
   font-family: Patrick Hand;
-  font-size: 60px;
+  font-size: 40px;
 }
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-family: Patrick Hand;
+    font-size: 60px;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -35,7 +43,7 @@ body {
 
 header {
   background-color: #f26d3d;
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -175,7 +183,7 @@ footer {
   width: 100%;
   color: var(--text-color);
   background-color: #f26d3d;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,16 +194,20 @@ footer {
 }
 
 #copyright {
-  margin-bottom: 10px;
+  height: 20%;
 }
 
 #social-med {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+  height: 80%;
+  margin: auto auto 2% auto;
 }
 
-#social-med i {
-  padding: 20px;
+.fa-3x {
+  font-size: 2.5em;
 }
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
@@ -215,6 +227,9 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+  footer {
+    height: 100px;
+  }
   #footer-logo {
     display: none;
   }
@@ -223,6 +238,10 @@ main {
     height: 100%;
     /* background-color: rgba(225, 225, 225, 0.5); */
     margin-bottom: 50px;
+  }
+
+  .fa-3x {
+    font-size: 3em;
   }
 }
 
