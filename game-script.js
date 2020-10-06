@@ -29,3 +29,50 @@ jaugeMousse.addEventListener('mouseover', function () {
   - La nouvelle taille est appliquée avec une transition
   - Si le score est de 8 (jeu fini), la fonction est interrompue grâce à return
 */
+
+/* Récupération des images - carte face cachées / cartes avec icone de bières
+ */
+
+/*  */
+const backCard = 'Pictures/cards/back-face.png';
+const cardArray = [
+  'Pictures/cards/bouteille2.png',
+  'Pictures/cards/bouteille4.png',
+  'Pictures/cards/bouteille3.png',
+  'Pictures/cards/bouteille5.png',
+  'Pictures/cards/bouteille6.png',
+  'Pictures/cards/bouteille7.png',
+  'Pictures/cards/bouteille8.png',
+  'Pictures/cards/bouteille10.png',
+  'Pictures/cards/bouteille2.png',
+  'Pictures/cards/bouteille4.png',
+  'Pictures/cards/bouteille3.png',
+  'Pictures/cards/bouteille5.png',
+  'Pictures/cards/bouteille6.png',
+  'Pictures/cards/bouteille7.png',
+  'Pictures/cards/bouteille8.png',
+  'Pictures/cards/bouteille10.png',
+];
+
+function shuffle(arr) {
+  let currentIndex = arr.length - 1,
+    temporaryValue,
+    randomIndex;
+  for (currentIndex; currentIndex >= 0; currentIndex--) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    temporaryValue = arr[randomIndex];
+    arr[randomIndex] = arr[currentIndex];
+    arr[currentIndex] = temporaryValue;
+  }
+  return arr;
+}
+
+shuffle(cardArray);
+
+const myContainer = document.querySelector('.card-container');
+for (let i = 0; i < cardArray.length; i++) {
+  const myDiv = document.createElement('div');
+  myContainer.appendChild(myDiv);
+  myDiv.classList.toggle('card');
+  myDiv.innerHTML = `<img class="card-face" src=${cardArray[i]}>`;
+}
