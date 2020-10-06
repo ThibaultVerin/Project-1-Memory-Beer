@@ -37,22 +37,22 @@ jaugeMousse.addEventListener('mouseover', function () {
 /*  */
 const backCard = 'Pictures/cards/back-face.png';
 const cardArray = [
-  'Pictures/cards/bouteille2.png',
-  'Pictures/cards/bouteille4.png',
-  'Pictures/cards/bouteille3.png',
-  'Pictures/cards/bouteille5.png',
-  'Pictures/cards/bouteille6.png',
-  'Pictures/cards/bouteille7.png',
-  'Pictures/cards/bouteille8.png',
-  'Pictures/cards/bouteille10.png',
-  'Pictures/cards/bouteille2.png',
-  'Pictures/cards/bouteille4.png',
-  'Pictures/cards/bouteille3.png',
-  'Pictures/cards/bouteille5.png',
-  'Pictures/cards/bouteille6.png',
-  'Pictures/cards/bouteille7.png',
-  'Pictures/cards/bouteille8.png',
-  'Pictures/cards/bouteille10.png',
+  { url: 'Pictures/cards/bouteille2.png', name: 'bouteille2' },
+  { url: 'Pictures/cards/bouteille4.png', name: 'bouteille4' },
+  { url: 'Pictures/cards/bouteille3.png', name: 'bouteille3' },
+  { url: 'Pictures/cards/bouteille5.png', name: 'bouteille5' },
+  { url: 'Pictures/cards/bouteille6.png', name: 'bouteille6' },
+  { url: 'Pictures/cards/bouteille7.png', name: 'bouteille7' },
+  { url: 'Pictures/cards/bouteille8.png', name: 'bouteille8' },
+  { url: 'Pictures/cards/bouteille10.png', name: 'bouteille10' },
+  { url: 'Pictures/cards/bouteille2.png', name: 'bouteille2' },
+  { url: 'Pictures/cards/bouteille4.png', name: 'bouteille4' },
+  { url: 'Pictures/cards/bouteille3.png', name: 'bouteille3' },
+  { url: 'Pictures/cards/bouteille5.png', name: 'bouteille5' },
+  { url: 'Pictures/cards/bouteille6.png', name: 'bouteille6' },
+  { url: 'Pictures/cards/bouteille7.png', name: 'bouteille7' },
+  { url: 'Pictures/cards/bouteille8.png', name: 'bouteille8' },
+  { url: 'Pictures/cards/bouteille10.png', name: 'bouteille10' },
 ];
 
 function shuffle(arr) {
@@ -75,7 +75,10 @@ for (let i = 0; i < cardArray.length; i++) {
   const myDiv = document.createElement('div');
   myContainer.appendChild(myDiv);
   myDiv.classList.toggle('card');
-  myDiv.innerHTML = `<img class="card-face" src=${cardArray[i]}>`;
+  myDiv.setAttribute('data-index', cardArray[i].name);
+  myDiv.innerHTML = `
+  <img class="card-back" src=${backCard}>
+  <img class="card-front" src=${cardArray[i].url} >`;
 }
 
 /* Récupération des cartes et placement dans un tableau avec "..." */
@@ -103,7 +106,7 @@ this = élément qui déclenche l'élément */
 const displayCard = function () {
   this.classList.toggle('open');
 
-  /*   if (clicked) {
+  /*   if (lockBoard) {
     return;
   } */
 
@@ -114,6 +117,7 @@ const displayCard = function () {
   } else {
     clicked = false;
     secondCard = this;
+    console.log(secondCard.dataset.index);
 
     match();
   }
