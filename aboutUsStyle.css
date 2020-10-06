@@ -68,8 +68,8 @@
 }
 
 .aboutUsButton {
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background-color: #f2b705;
+  border: 1px solid #f2b705;
   border-radius: 5%;
   width: 243px;
   height: 75px;
