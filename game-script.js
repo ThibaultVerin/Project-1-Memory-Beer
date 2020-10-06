@@ -1,33 +1,58 @@
+/* Récupération des cartes et placement dans un tableau avec "..." */
+
 const card = document.querySelectorAll('.card');
+
+/* Mon array est rempli par les cartes. */
 const arrayCard = [...card];
+
+/* Création de variables avec la première représentant si on a cliqué ou non, puis une variable pour la première carte cliquée ansi que pour la deuxième */
 
 let clicked = false;
 let firstCard;
 let secondCard;
 
-/* Mon array est rempli par les cartes. */
+/* Création de la variable lockBoard pour bloquer le board lorsqu'il y a deux clicks */
+
+let lockBoard = false;
+
+/* Création de la fonction "Display" qui s'active lors de "l'addEventListener" (voir plus bas):
+- 1ere étape : modification de la classe pour modifier le style CSS lors de l'evenement
+- 2eme étape : déterminer si la carte cliquée est la 1ere ou 2eme et attribuer aux variables 
+this = élément qui déclenche l'élément */
 
 const displayCard = function () {
   this.classList.toggle('open');
 
+  /*   if (clicked) {
+    return;
+  } */
+
   if (!clicked) {
     clicked = true;
     firstCard = this;
+    console.log(firstCard.dataset.index);
   } else {
     clicked = false;
     secondCard = this;
 
-    console.log(firstCard, secondCard);
+    match();
   }
 };
 
-/* const match = function () {
-  if (firstCard.dataset.img === secondCard.dataset.img) {
+/*     - 3eme étape : via le data.index definit dans l'image on va déterminer si match ou non, si match remove eventListener, si pas match remove class et add setTimeout pour gérer la transition */
+
+function match() {
+  if (firstCard.dataset.index === secondCard.dataset.index) {
+    firstCard.removeEventListener('click', displayCard);
+    secondCard.removeEventListener('click', displayCard);
     console.log('its a match');
   } else {
-    this.removeEventListener('click', displayCard);
+    setTimeout(() => {
+      firstCard.classList.remove('open');
+      secondCard.classList.remove('open');
+    }, 1000);
   }
-}; */
+}
 
 for (let i = 0; i < arrayCard.length; i++) {
   arrayCard[i].addEventListener('click', displayCard);

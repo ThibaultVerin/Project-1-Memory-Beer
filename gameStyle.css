@@ -67,10 +67,14 @@
   transition-duration: 0.5s;
 }
 
+/* :active veut dire que l'élément est activé, ici cliqué */
+
 .card:active {
   transform: scale(0.9);
   transition-duration: 0.2s;
 }
+
+/* Lorsque eventListener sur une image elle change de classe pour ".open" et on va la rotate pour voir l'autre face*/
 
 .card.open {
   transform: rotateY(180deg);
@@ -82,6 +86,8 @@
   margin: auto;
   transform: rotateY(180deg);
 }
+
+/* backface-visibility: hidden; car les deux images de la carte sont superposées et on ne veut pas voir l'image de fond */
 
 .card img {
   width: 100%;
