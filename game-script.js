@@ -16,8 +16,7 @@ const displayCard = function () {
   } else {
     clicked = false;
     secondCard = this;
-
-    console.log(firstCard, secondCard);
+    console.log(secondCard);
   }
 };
 
