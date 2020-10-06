@@ -109,5 +109,5 @@ for (let i = 0; i < cardArray.length; i++) {
   const myDiv = document.createElement('div');
   myContainer.appendChild(myDiv);
   myDiv.classList.toggle('card');
-  myDiv.innerHTML = `<img class="card-face" src=${cardArray[i]}>`;
+  myDiv.innerHTML = `<img class="card-back" src=${cardArray[i]}>`;
 }
