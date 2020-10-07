@@ -120,6 +120,20 @@ const displayCard = function () {
     secondCard = this;
     console.log(secondCard.dataset.index);
 
+    /*if (firstCard.dataset.index !== secondCard.dataset.index) {
+      const cardContainer = document.querySelector('.card-container');
+      cardContainer.addEventListener('click', () => {
+        cardContainer.classList.toggle('rotate');
+      });
+    }*/
+    const mainContainer = document.querySelector('.main-card-container');
+
+    myContainer.addEventListener('click', () => {
+      myContainer.classList.add('drunk');
+      mainContainer.classList.toggle('rotate');
+      mainContainer.classList.toggle('rotate-bis');
+    });
+
     match();
   }
 };
@@ -142,3 +156,11 @@ function match() {
 for (let i = 0; i < arrayCard.length; i++) {
   arrayCard[i].addEventListener('click', displayCard);
 }
+
+/* TEST DRUNK MODE */
+/*const mainContainer = document.querySelector('.main-card-container');
+
+myContainer.addEventListener('click', () => {
+  myContainer.classList.add('drunk');
+  mainContainer.classList.add('card-drunk');
+});*/

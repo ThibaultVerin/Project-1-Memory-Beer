@@ -53,6 +53,7 @@
   margin: auto;
   transform: rotateY(180deg);
 }
+
 /* backface-visibility: hidden; car les deux images de la carte sont superposées et on ne veut pas voir l'image de fond */
 
 .card img {
@@ -148,4 +149,38 @@
     width: 100%;
     flex-shrink: 1;
   }
+}
+
+/* Test du drunk Mode */
+
+@keyframes drunk-animation {
+  0% {
+    filter: blur(2px);
+  }
+
+  25% {
+    filter: blur(2px);
+  }
+  50% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(2px);
+  }
+}
+
+.drunk {
+  animation: 5s infinite drunk-animation;
+}
+
+/*.card-drunk {
+  animation: 0.5s shake;
+
+  animation-iteration-count: infinite;
+}*/
+.rotate {
+  transform: rotate(90deg);
+}
+.rotate-bis {
+  transform: rotate(-90deg);
 }
