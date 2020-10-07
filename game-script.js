@@ -29,21 +29,110 @@ Ici le total de paires à 9 (au lieu de 8) pour ne jamais atteindre une taille d
 
 const gameContainer = document.querySelector('.main-card-container');
 const playMenu = document.querySelector('.playMenu');
+let onePlayer, twoPlayers;
 
-const playerNameBtn = document.querySelector('#playerNameCompleted');
-playerNameBtn.addEventListener('click', () => {
-  const playerName = document.querySelector('#playerNameInput');
-  localStorage.setItem('name', `${playerName.value}`);
-  console.log(localStorage);
-  const selectDifficulty = document.querySelector('.playerName');
-  selectDifficulty.innerHTML = 'Select difficulty';
-  const levelBtn = document.querySelectorAll('.levelBtn');
-  for (let i = 0; i < levelBtn.length; i++) {
-    levelBtn[i].style.visibility = 'visible';
-    levelBtn[i].style.opacity = 1;
-    levelBtn[i].style.transition = 'opacity 1s ease';
+function onePlayerSelected() {
+  // Masque les div de selection du nombre de joueurs
+  for (let i = 0; i < playerBtn.length; i++) {
+    playerBtn[i].style.display = 'none';
   }
-});
+  //Affiche la div pour entrer le nom du joueur 1
+  player1.style.display = 'flex';
+
+  playerNameBtn1.addEventListener('click', () => {
+    const playerName = document.querySelector('#playerNameInput1');
+    localStorage.setItem('name', `${playerName.value}`);
+    console.log(localStorage);
+    const selectDifficulty = document.querySelector('.playerName');
+    selectDifficulty.innerHTML = 'Select difficulty';
+    const levelBtn = document.querySelectorAll('.levelBtn');
+    for (let i = 0; i < levelBtn.length; i++) {
+      levelBtn[i].style.visibility = 'visible';
+      levelBtn[i].style.opacity = 1;
+      levelBtn[i].style.transition = 'opacity 1s ease';
+    }
+  });
+}
+
+function twoPlayersSelected() {
+  // Masque les div de selection du nombre de joueurs
+  for (let i = 0; i < playerBtn.length; i++) {
+    playerBtn[i].style.display = 'none';
+  }
+
+  //Affiche la div pour entrer le nom du 1er joueur
+  player1.style.display = 'flex';
+
+  //Nom du 2ème joueur + stockage nom du 1er joueur + Masquer div 1er joueur
+  playerNameBtn1.addEventListener('click', () => {
+    const playerName1 = document.querySelector('#playerNameInput1');
+    localStorage.setItem('name1', `${playerName1.value}`);
+    player1.style.display = 'none';
+    player2.style.display = 'flex';
+  });
+
+  //Stockage nom 2ème joueur + selection difficulté
+  playerNameBtn2.addEventListener('click', () => {
+    const playerName2 = document.querySelector('#playerNameInput2');
+    localStorage.setItem('name2', `${playerName2.value}`);
+    player2.innerHTML = 'Select difficulty'; //remplace nom player 2 par select difficulty
+    const levelBtn = document.querySelectorAll('.levelBtn'); //affiche les différents levels
+    for (let i = 0; i < levelBtn.length; i++) {
+      levelBtn[i].style.visibility = 'visible';
+      levelBtn[i].style.opacity = 1;
+      levelBtn[i].style.transition = 'opacity 1s ease';
+    }
+  });
+}
+
+// ----- AFFICHAGE DU MENU ------
+const player1 = document.querySelector('#playerName1'); // div joueur 1
+const player2 = document.querySelector('#playerName2'); // div joueur 2
+const playerBtn = document.querySelectorAll('.playerBtn'); // Selection du nombre de joueur
+const playerNameBtn1 = document.querySelector('#playerNameCompleted'); //submit player 1 name
+const playerNameBtn2 = document.querySelector('#playerNameCompleted2'); //submit player 2 name
+
+// Cas n°1: Mode 1 joueur déjà sélectionné
+if (
+  sessionStorage.playerIsSet === 'true' &&
+  sessionStorage.player === 'one player'
+) {
+  onePlayerSelected();
+}
+
+// Cas n°2 : Mode 2 joueurs déjà sélectionné
+else if (
+  sessionStorage.playerIsSet === 'true' &&
+  sessionStorage.player === 'two players'
+) {
+  twoPlayersSelected();
+}
+
+// Cas n°3 : Nombre de joueurs non sélectionné
+else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
+  //Affiche les boutons 1 player, 2 players
+  for (let i = 0; i < playerBtn.length; i++) {
+    playerBtn[i].style.display = 'flex';
+  }
+  const onePlayer = document.querySelector('#playerBtn1');
+  console.log(onePlayer);
+  //set le nombre de joueurs et lance le menu pour 1 joueur
+  onePlayer.addEventListener('click', () => {
+    sessionStorage.setItem('player', 'one player');
+    sessionStorage.setItem('playerIsSet', 'true');
+    onePlayerSelected();
+  });
+
+  //set le nombre de joueurs et lance le menu pour 2 joueurs
+  const twoPlayers = document.querySelector('#playerBtn2');
+  twoPlayers.addEventListener('click', () => {
+    sessionStorage.setItem('player', 'two players');
+    sessionStorage.setItem('playerIsSet', 'true');
+    twoPlayersSelected();
+  });
+}
+
+// ----- FIN AFFICHAGE MENU -----
 
 function startLevelOne() {
   console.log(gameContainer);
