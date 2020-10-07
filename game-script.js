@@ -134,11 +134,21 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
 
 // ----- FIN AFFICHAGE MENU -----
 
-function startLevelOne() {
+function startGame() {
   console.log(gameContainer);
   playMenu.style = 'display: none';
   gameContainer.style = 'display : flex';
 }
+
+// ---- TEST DRUNK MODE -----
+// let drunk = false;
+// const drunkMode = document.querySelector('#drunkMode');
+// drunkMode.addEventListener('click', () => {
+//   drunk = true;
+//   console.log(drunk);
+// });
+
+// ---- FIN TEST DRUNK MODE -----
 
 // ----- END START GAME -----
 
