@@ -93,7 +93,6 @@ const arrayCard = [...card];
 let clicked = false;
 let firstCard;
 let secondCard;
-
 /* Création de la variable lockBoard pour bloquer le board lorsqu'il y a deux clicks */
 
 let lockBoard = false;
@@ -104,20 +103,24 @@ let lockBoard = false;
 this = élément qui déclenche l'élément */
 
 const displayCard = function () {
-  this.classList.toggle('open');
-
-  /*   if (lockBoard) {
+  if (this === firstCard) {
     return;
-  } */
+  }
+
+  if (lockBoard) {
+    return;
+  }
+
+  this.classList.toggle('open');
 
   if (!clicked) {
     clicked = true;
     firstCard = this;
-    console.log(firstCard.dataset.index);
+    console.log('firstCard');
   } else {
     clicked = false;
     secondCard = this;
-    console.log(secondCard.dataset.index);
+    console.log('secondCard');
 
     match();
   }
@@ -131,9 +134,12 @@ function match() {
     secondCard.removeEventListener('click', displayCard);
     console.log('its a match');
   } else {
+    lockBoard = true;
     setTimeout(() => {
       firstCard.classList.remove('open');
       secondCard.classList.remove('open');
+      lockBoard = false;
+      firstCard = null;
     }, 1000);
   }
 }
