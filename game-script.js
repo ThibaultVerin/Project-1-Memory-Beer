@@ -26,10 +26,11 @@ Ici le total de paires à 9 (au lieu de 8) pour ne jamais atteindre une taille d
 /* ----- END SCRIPT JAUGE ----- */
 
 // ----- START GAME -----
+var score = 5000;
+var scorePlayerTwo = 0;
 
 const gameContainer = document.querySelector('.main-card-container');
 const playMenu = document.querySelector('.playMenu');
-let onePlayer, twoPlayers;
 
 function onePlayerSelected() {
   // Masque les div de selection du nombre de joueurs
@@ -41,7 +42,7 @@ function onePlayerSelected() {
 
   playerNameBtn1.addEventListener('click', () => {
     const playerName = document.querySelector('#playerNameInput1');
-    localStorage.setItem('name', `${playerName.value}`);
+    localStorage.setItem('name1', `${playerName.value}`);
     console.log(localStorage);
     const selectDifficulty = document.querySelector('.playerName');
     selectDifficulty.innerHTML = 'Select difficulty';
@@ -92,20 +93,19 @@ const playerBtn = document.querySelectorAll('.playerBtn'); // Selection du nombr
 const playerNameBtn1 = document.querySelector('#playerNameCompleted'); //submit player 1 name
 const playerNameBtn2 = document.querySelector('#playerNameCompleted2'); //submit player 2 name
 
+let twoPlayersMode = false;
 // Cas n°1: Mode 1 joueur déjà sélectionné
-if (
-  sessionStorage.playerIsSet === 'true' &&
-  sessionStorage.player === 'one player'
-) {
+if (sessionStorage.playerIsSet === 'true' && sessionStorage.playerNb === '1') {
   onePlayerSelected();
 }
 
 // Cas n°2 : Mode 2 joueurs déjà sélectionné
 else if (
   sessionStorage.playerIsSet === 'true' &&
-  sessionStorage.player === 'two players'
+  sessionStorage.playerNb === '2'
 ) {
   twoPlayersSelected();
+  twoPlayersMode = true;
 }
 
 // Cas n°3 : Nombre de joueurs non sélectionné
@@ -118,7 +118,7 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
   console.log(onePlayer);
   //set le nombre de joueurs et lance le menu pour 1 joueur
   onePlayer.addEventListener('click', () => {
-    sessionStorage.setItem('player', 'one player');
+    sessionStorage.setItem('playerNb', '1');
     sessionStorage.setItem('playerIsSet', 'true');
     onePlayerSelected();
   });
@@ -126,18 +126,34 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
   //set le nombre de joueurs et lance le menu pour 2 joueurs
   const twoPlayers = document.querySelector('#playerBtn2');
   twoPlayers.addEventListener('click', () => {
-    sessionStorage.setItem('player', 'two players');
+    sessionStorage.setItem('playerNb', '2');
     sessionStorage.setItem('playerIsSet', 'true');
     twoPlayersSelected();
+    twoPlayersMode = true;
   });
 }
 
 // ----- FIN AFFICHAGE MENU -----
 
 function startGame() {
-  console.log(gameContainer);
   playMenu.style = 'display: none';
   gameContainer.style = 'display : flex';
+}
+
+// ----- Div Mode 1 joueur -----
+const playerOneDiv = document.querySelector('#player1');
+playerOneDiv.innerHTML = `
+${sessionStorage.name1}<br/> 
+Score: ${score}`;
+
+// ----- Div Mode 2 joueurs -----
+const playerTwoDiv = document.querySelector('#player2');
+playerTwoDiv.innerHTML = `
+${sessionStorage.name2}<br/> 
+Score: ${scorePlayerTwo}`;
+
+if (!twoPlayersMode) {
+  playerTwoDiv.style.display = 'none';
 }
 
 // ---- TEST DRUNK MODE -----
@@ -245,16 +261,94 @@ const displayCard = function () {
 };
 
 /*     - 3eme étape : via le data.index definit dans l'image on va déterminer si match ou non, si match remove eventListener, si pas match remove class et add setTimeout pour gérer la transition */
-let score = 5000;
+
+let playerOne = {
+  name: localStorage.name1,
+  score: score,
+  isPlaying: true,
+};
+let playerTwo = {
+  name: localStorage.name2,
+  score: scorePlayerTwo,
+  isPlaying: false,
+};
+
+let totalMatch = 0;
 
 function match() {
+  // SI SUCCES
   if (firstCard.dataset.index === secondCard.dataset.index) {
     firstCard.removeEventListener('click', displayCard);
     secondCard.removeEventListener('click', displayCard);
     console.log('its a match');
-    score = score + 10;
-    return score;
-  } else {
+
+    //GAME OVER
+    totalMatch += 1;
+    if (totalMatch >= 8) {
+      endGame();
+    }
+
+    //GESTION SCORE
+    if (playerOne.isPlaying === true) {
+      score = score + 100;
+      playerOneDiv.innerHTML = `
+          ${sessionStorage.name1}<br/> 
+          Score: ${score}
+          `;
+      return score;
+    } else if (playerTwo.isPlaying === true) {
+      scorePlayerTwo = scorePlayerTwo + 100;
+      playerTwoDiv.innerHTML = `
+          ${sessionStorage.name2}<br/> 
+          Score: ${scorePlayerTwo}
+          `;
+      return scorePlayerTwo;
+    }
+    return scorePlayerTwo;
+  }
+  // SI ECHEC
+  else {
+    if (playerOne.isPlaying === true) {
+      if (score > 0) {
+        score = score - 30;
+      } else {
+        score = 0;
+      }
+      playerOneDiv.innerHTML = `
+        ${sessionStorage.name1}<br/> 
+        Score: ${score}
+        `;
+      // MODE 2 JOUEURS : CHANGEMENT DE JOUEUR
+      if (twoPlayersMode) {
+        playerOne.isPlaying = false;
+        playerTwo.isPlaying = true;
+        playerTwoDiv.classList.toggle('isPlaying');
+        playerOneDiv.classList.toggle('isPlaying');
+      }
+
+      console.log(playerOne);
+      return score;
+    } else if (playerTwo.isPlaying === true) {
+      console.log('Player two is playing !');
+      if (scorePlayerTwo > 0) {
+        scorePlayerTwo = scorePlayerTwo - 30;
+      } else if (scorePlayerTwo <= 0) {
+        scorePlayerTwo = 0;
+      }
+      playerTwoDiv.innerHTML = `
+        ${sessionStorage.name2}<br/> 
+        Score: ${scorePlayerTwo}
+        `;
+      // MODE 2 JOUEURS : CHANGEMENT DE JOUEUR
+      if (twoPlayersMode) {
+        playerTwo.isPlaying = false;
+        playerTwoDiv.classList.toggle('isPlaying');
+        playerOne.isPlaying = true;
+        playerOneDiv.classList.toggle('isPlaying');
+      }
+
+      return scorePlayerTwo;
+    }
     setTimeout(() => {
       firstCard.classList.remove('open');
       secondCard.classList.remove('open');
@@ -268,7 +362,15 @@ for (let i = 0; i < arrayCard.length; i++) {
 
 //Fonction qui permet de stocker le score en local storage
 function endGame() {
+  const endGameModal = document.querySelector('.endGame-container');
+  endGameModal.style.display = 'flex';
+  //Stockage des données
   localStorage.setItem('isOver', 'true');
   localStorage.setItem('score', `${score}`);
+  localStorage.setItem('score2', `${scorePlayerTwo}`);
+  localStorage.setItem('name1', `${sessionStorage.name1}`);
+  localStorage.setItem('name2', `${sessionStorage.name2}`);
+  //Clean sessionStorage pour choisir à nouveau le nb de joueurs
+  sessionStorage.clear();
 }
-endGame();
+// endGame();

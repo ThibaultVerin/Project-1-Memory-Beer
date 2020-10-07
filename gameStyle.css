@@ -74,13 +74,13 @@
   cursor: pointer;
 }
 
-.jauge-container,
+/* .jauge-container,
 .jauge-corps,
 .jauge-mousse {
   display: none;
-}
+} */
 
-.playModal-container {
+.endGame-container {
   display: none;
   /* display: flex; */
   align-items: center;
@@ -96,13 +96,13 @@
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.playModal-box {
+.endGame-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f2b705;
-  width: 200px;
-  height: 80px;
+  width: 300px;
+  height: 161px;
   border-radius: 10px;
   box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
   color: white;
@@ -111,7 +111,17 @@
   cursor: pointer;
 }
 
-/* .playModal-input {
+.endGame-box h1{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.endGame-box a{
+  text-decoration: none;
+  color: white;
+}
+
+/* .endGame-input {
   height: 30%;
   border-radius: 10px;
   font-size: 15px;
@@ -182,14 +192,22 @@
 }
 
 @media screen and (min-width: 768px) {
+  .main-container {
+    /* border: 1px solid black; */
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .main-card-container {
     display: none;
     /* display: flex; */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 765px;
     height: 600px;
-    margin: auto;
+    margin-bottom: 50px;
     background-color: #f2b705;
     border-radius: 10px;
     box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
@@ -219,27 +237,37 @@
     transition-duration: 0.5s;
   }
 
-  .jauge-container {
-    /* placement */
-
-    align-self: flex-end;
-    margin: 5% 5% 5% 0;
-    height: 0%;
-    max-height: 550px;
+  .score-container {
+    justify-self: flex-end;
+    height: 600px;
+    margin-right:5%;
+    margin-bottom: 50px;
     width: 15%;
-    border-radius: 10px;
-    overflow: hidden;
     padding-top: 10px;
-    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-
-    /* placement images */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+}
   }
 
-  .jauge-mousse {
+  .score {
+    display: flex;
+    align-items: center;
+  line-height:50px;
+    width:100%;
+    height:30%;
+    font-family: Patrick Hand;
+    font-size: 35px;
+
+  }
+
+  .score.isPlaying {
+    background-color: white;
+  }
+
+  /* .jauge-mousse {
     display: block;
     height: 100px;
     width: 100%;
@@ -250,5 +278,5 @@
     height: 100%;
     width: 100%;
     flex-shrink: 1;
-  }
+  } */
 }

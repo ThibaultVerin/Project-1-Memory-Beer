@@ -52,55 +52,65 @@
       </nav>
     </header>
     <main>
-      <div class="background-opacity">
+      <div class="main-container">
                    
 
-      <div class = "playMenu">
-        <div class ="playerBtn" id = "playerBtn1" > 
-          1 Player                    
+        <div class = "playMenu">
+          <div class ="playerBtn" id = "playerBtn1" > 
+            1 Player                    
+          </div>
+          <div class= "playerBtn" id = "playerBtn2">
+            2 Players
         </div>
-        <div class= "playerBtn" id = "playerBtn2">
-          2 Players
-      </div>
-        <div class="playerName" id="playerName1">
-          <label for="playerNameInput1">Player 1:
-            </label>
-          <input type="text" id="playerNameInput1"/>
-          <img src="Pictures/playBtn.png" alt="Submit logo" id="playerNameCompleted"/>
-        </div>
-        <div class="playerName" id="playerName2">
-          <label for="playerNameInput">Player 2: </label>
-          <input type="text" id="playerNameInput2"/>
-          <img src="Pictures/playBtn.png" alt="Submit logo" id="playerNameCompleted2"/>
-        </div>
+          <div class="playerName" id="playerName1">
+            <label for="playerNameInput1">Player 1:
+              </label>
+            <input type="text" id="playerNameInput1"/>
+            <img src="Pictures/playBtn.png" alt="Submit logo" id="playerNameCompleted"/>
+          </div>
+          <div class="playerName" id="playerName2">
+            <label for="playerNameInput">Player 2: </label>
+            <input type="text" id="playerNameInput2"/>
+            <img src="Pictures/playBtn.png" alt="Submit logo" id="playerNameCompleted2"/>
+          </div>
 
-        <div class= "levelBtn" onclick=startGame()>   
-          Soft Mode
-          </div>
-  
-        <div class= "levelBtn" id = "drunkMode" onclick=startGame()>   
-          Drunk Mode
-          </div>
-      </div>
+          <div class= "levelBtn" onclick=startGame()>   
+            Soft Mode
+            </div>
     
-       <div class="main-card-container">
-        <div class="playModal-container">
-          <div class="playModal-box">
-            <p>Game Over !</p>
+          <div class= "levelBtn" id = "drunkMode" onclick=startGame()>   
+            Drunk Mode
+            </div>
+        </div>
+      
+        <div class="main-card-container">
+          <div class="endGame-container">
+            <div class="endGame-box">
+              <h1>Game Over !</h1>
+              <a href="ranking.html">See Highscores</a>
+              <a href="game.html">Play again !</a>
+            </div>
+            
           </div>
+          <div class="card-container">
+
+          </div>
+
           
+
+          <!-- GESTION DE LA JAUGE -->
+          <!-- <div class="jauge-container">
+            <img class="jauge-mousse" src="Pictures/jauge/jauge-mousse3.png"/>
+            <img class="jauge-corps" src="Pictures/jauge/jauge-corps3.png" />
+          </div> -->
+
+        </div> 
+
+        <!-- TABLE DES SCORES -->
+        <div class="score-container">
+          <div class="score isPlaying" id="player1">Player 1</div>
+          <div class="score" id="player2">Player 2</div>
         </div>
-        <div class="card-container">
-
-        </div>
-
-        <!-- GESTION DE LA JAUGE -->
-        <!-- <div class="jauge-container">
-          <img class="jauge-mousse" src="Pictures/jauge/jauge-mousse3.png"/>
-          <img class="jauge-corps" src="Pictures/jauge/jauge-corps3.png" />
-        </div> -->
-
-      </div> 
        
     </div>
   </div>

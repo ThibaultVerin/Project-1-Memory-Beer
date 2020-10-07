@@ -46,6 +46,13 @@ if (localStorage.isOver === 'true') {
     name: localStorage.name,
     score: parseInt(localStorage.score),
   });
+
+  if (localStorage.playerNb === '2') {
+    rankingTable.push({
+      name: localStorage.name2,
+      score: parseInt(localStorage.score2),
+    });
+  }
 }
 function compare(a, b) {
   if (a.score > b.score) {
