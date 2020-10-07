@@ -153,6 +153,7 @@ header ul li a {
     width: 100%;
     font-size: 30px;
   }
+
   #navbar ul li {
     margin-right: 30px;
     font-size: 30px;
@@ -161,6 +162,12 @@ header ul li a {
     text-decoration: none;
     color: var(--text-color);
   }
+
+  #titre-memory a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
   .binch {
     margin-left: 5px;
   }
@@ -174,6 +181,7 @@ header ul li a {
     color: var(--text-color);
   }
 }
+
 /* Fin du header */
 
 /* Début FOOTER */
@@ -184,11 +192,9 @@ footer {
   color: var(--text-color);
   background-color: #f26d3d;
   height: 80px;
-  display: flex;
   align-items: center;
   justify-content: center;
   display: flex;
-  justify-content: center;
   flex-shrink: 0;
   font-family: Patrick Hand;
 }
@@ -208,6 +214,29 @@ footer {
 
 .fa-3x {
   font-size: 2.5em;
+}
+
+/* implantation du taxi */
+
+.taxi {
+  position: absolute;
+  left: 0;
+  margin-bottom: 30px;
+}
+.taxi-drive {
+  animation-duration: 2s;
+  animation-name: taxiDriving;
+  animation-timing-function: ease-in;
+}
+
+@keyframes taxiDriving {
+  from {
+    margin-right: 0%;
+  }
+
+  to {
+    margin-left: 95%;
+  }
 }
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */

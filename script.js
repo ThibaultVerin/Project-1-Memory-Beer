@@ -11,3 +11,14 @@ burger.onclick = function () {
   navBar.style.alignItems = 'center';
   navBar.style.justifyContent = 'space-between';
 };
+
+/* implantation du taxi */
+
+const taxiCar = document.querySelector('.taxi');
+
+taxiCar.onclick = function () {
+  setTimeout(function () {
+    taxiCar.classList.remove('taxi-drive');
+  }, 2000);
+  taxiCar.classList.add('taxi-drive');
+};
