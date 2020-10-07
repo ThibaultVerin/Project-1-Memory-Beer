@@ -151,36 +151,31 @@
   }
 }
 
-/* Test du drunk Mode */
+/* Drunk Mode */
 
-@keyframes drunk-animation {
+.rotate {
+  animation: rotateAndBlur 5s infinite;
+}
+
+@keyframes rotateAndBlur {
   0% {
+    transform: rotate(0deg);
     filter: blur(2px);
   }
-
   25% {
-    filter: blur(2px);
+    transform: rotate(90deg);
+    filter: blur(3px);
   }
   50% {
+    transform: rotate(180deg);
+    filter: blur(2px);
+  }
+  75% {
+    transform: rotate(270deg);
     filter: blur(3px);
   }
   100% {
+    transform: rotate(360deg);
     filter: blur(2px);
   }
-}
-
-.drunk {
-  animation: 5s infinite drunk-animation;
-}
-
-/*.card-drunk {
-  animation: 0.5s shake;
-
-  animation-iteration-count: infinite;
-}*/
-.rotate {
-  transform: rotate(90deg);
-}
-.rotate-bis {
-  transform: rotate(-90deg);
 }
