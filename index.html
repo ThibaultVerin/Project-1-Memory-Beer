@@ -55,17 +55,16 @@
       <div class="background-opacity">
 
           <div class = "index-container">
-            <div class ="indexBtn" onclick="window.location.href='game.html'"> 
+            <div class ="indexBtn" onclick=onePlayer()> 
               1 Player                    
             </div>
-               <div class= "indexBtn">
-               
-               2 Players
-              
-               </div>
+            <div class= "indexBtn" onclick=twoPlayers()>
+              2 Players
+            </div>
            
-           <div class="indexBtn" id="tutorialBtn" onclick=startTutorial()>  How to Play ?
-           </div>
+            <div class="indexBtn" id="tutorialBtn" onclick=startTutorial()>  
+              How to Play ?
+            </div>
    
           </div>
             
@@ -176,6 +175,7 @@
 ></script>
 <!-- Ce script permet de faire d'afficher le contenu du burger menu après le click -->
 <script src="script.js"></script>
+<script src="player-selection.js"></script>
 <script src="tutorial-script.js"></script>
 </body>
 </html>
