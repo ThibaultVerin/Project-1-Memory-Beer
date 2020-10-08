@@ -1,10 +1,20 @@
-.main-card-container {
+.main-container {
+  /* border: 1px solid black; */
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-card-container {
+  display: none;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   width: 75%;
   height: 400px;
   margin: auto;
+  margin-bottom: 50px;
   background-color: #f2b705;
   border-radius: 10px;
   box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
@@ -52,6 +62,8 @@
   padding-top: 10px;
   margin: auto;
   transform: rotateY(180deg);
+  backface-visibility: visible;
+  z-index: 1;
 }
 
 /* backface-visibility: hidden; car les deux images de la carte sont superposées et on ne veut pas voir l'image de fond */
@@ -67,7 +79,6 @@
 
 .card-back {
   height: 60%;
-  padding-top: 25px;
   margin: auto;
 }
 
@@ -75,20 +86,163 @@
   cursor: pointer;
 }
 
-.jauge-container,
+/* .jauge-container,
 .jauge-corps,
 .jauge-mousse {
   display: none;
+} */
+
+.endGame-container {
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.endGame-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2b705;
+  width: 300px;
+  height: 161px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+  cursor: pointer;
+}
+
+.endGame-box h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.endGame-box a {
+  text-decoration: none;
+  color: white;
+}
+
+/* .endGame-input {
+  height: 30%;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: Andika;
+} */
+
+.playMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+.playerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 80px;
+  margin: auto;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+  cursor: pointer;
+}
+
+.playerName {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+}
+
+.playername input {
+  margin-left: 10px;
+  font-family: Andika;
+}
+
+.levelBtn {
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 80px;
+  margin: auto;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+  cursor: pointer;
+}
+
+.score-container {
+  justify-self: flex-end;
+  margin-bottom: 10px;
+  width: 70%;
+  padding-top: 10px;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  line-height: 50px;
+  height: 20%;
+  font-family: Patrick Hand;
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.score.isPlaying {
+  background-color: #f2b705;
+
+  border-radius: 10px;
+  box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 768px) {
+  .main-container {
+    padding-top: 40px;
+  }
   .main-card-container {
-    display: flex;
+    display: none;
+    /* display: flex; */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 765px;
     height: 600px;
-    margin: auto;
+    margin-bottom: 50px;
     background-color: #f2b705;
     border-radius: 10px;
     box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
@@ -116,29 +270,38 @@
     transform: scale(1);
     transform-style: preserve-3d;
     transition-duration: 0.5s;
+    z-index: 2;
   }
 
-  .jauge-container {
-    /* placement */
-
-    align-self: flex-end;
-    margin: 5% 5% 5% 0;
-    height: 0%;
-    max-height: 550px;
-    width: 15%;
-    border-radius: 10px;
-    overflow: hidden;
+  /* .score-container {
+    justify-self: flex-end;
+    margin-bottom: 10px;
+    width: 70%;
     padding-top: 10px;
-    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+  } */
 
-    /* placement images */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
+  .score {
+    /* display: flex;
+    align-items: center;
+    line-height: 50px;
+    height: 20%;
+    font-family: Patrick Hand; */
+    font-size: 35px;
+    padding-left: 5px;
   }
 
-  .jauge-mousse {
+  .score.isPlaying {
+    background-color: #f2b705;
+
+    border-radius: 10px;
+    box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* .jauge-mousse {
     display: block;
     height: 100px;
     width: 100%;
@@ -149,5 +312,33 @@
     height: 100%;
     width: 100%;
     flex-shrink: 1;
+  } */
+
+/* Drunk Mode */
+
+.rotate {
+  animation: rotateAndBlur 5s infinite;
+}
+
+@keyframes rotateAndBlur {
+  0% {
+    transform: rotate(0deg);
+    filter: blur(2px);
+  }
+  25% {
+    transform: rotate(90deg);
+    filter: blur(3px);
+  }
+  50% {
+    transform: rotate(180deg);
+    filter: blur(2px);
+  }
+  75% {
+    transform: rotate(270deg);
+    filter: blur(3px);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: blur(2px);
   }
 }

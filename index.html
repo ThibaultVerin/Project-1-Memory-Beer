@@ -40,7 +40,10 @@
       <nav id="navbar">
         
         <div class="title-desktop">
-          <h1 id="titre-memory"><span style="font-size: 80px">M</span>emory <span style="font-size: 80px">B</span>eer</h1>
+          <h1 id="titre-memory">
+            <a href="index.html">
+              Memory Beer</h1>
+          </a>
         </div>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -55,17 +58,16 @@
       <div class="background-opacity">
 
           <div class = "index-container">
-            <div class ="indexBtn" onclick="window.location.href='game.html'"> 
+            <div class ="indexBtn" onclick=onePlayer()> 
               1 Player                    
             </div>
-               <div class= "indexBtn">
-               
-               2 Players
-              
-               </div>
+            <div class= "indexBtn" onclick=twoPlayers()>
+              2 Players
+            </div>
            
-           <div class="indexBtn" id="tutorialBtn" onclick=startTutorial()>  How to Play ?
-           </div>
+            <div class="indexBtn" id="tutorialBtn" onclick=startTutorial()>  
+              How to Play ?
+            </div>
    
           </div>
             
@@ -155,6 +157,11 @@
 </main>
 
 <footer>
+  <!-- debut implantation du taxi-->
+  <div class="taxi">
+    <img src="Pictures\taxi.png" />
+  </div>
+  <!-- fin implantation du taxi-->
   <div id="footer-container">
     <div id="social-med">
       <i class="fab fa-facebook fa-3x"></i>
@@ -166,6 +173,7 @@
         Copyleft Dream Tiz' 2020 - No Rights Reserved
       </p>
     </div>
+    
   </div>
 </footer>
 <!-- Ce script permet d'ajouter l'icone burger menu -->
@@ -176,6 +184,7 @@
 ></script>
 <!-- Ce script permet de faire d'afficher le contenu du burger menu après le click -->
 <script src="script.js"></script>
+<script src="player-selection.js"></script>
 <script src="tutorial-script.js"></script>
 </body>
 </html>

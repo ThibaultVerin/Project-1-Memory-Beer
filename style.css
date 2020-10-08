@@ -43,7 +43,7 @@ body {
 
 header {
   background-color: #f26d3d;
-  height: 80px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -138,6 +138,9 @@ header ul li a {
 /*----------------------------FIN TEST DU SHAKE-----------------*/
 
 @media screen and (min-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
   #burger-logo {
     display: none;
   }
@@ -148,11 +151,12 @@ header ul li a {
 
   #navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     font-size: 30px;
   }
+
   #navbar ul li {
     margin-right: 30px;
     font-size: 30px;
@@ -161,6 +165,12 @@ header ul li a {
     text-decoration: none;
     color: var(--text-color);
   }
+
+  #titre-memory a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
   .binch {
     margin-left: 5px;
   }
@@ -174,6 +184,7 @@ header ul li a {
     color: var(--text-color);
   }
 }
+
 /* Fin du header */
 
 /* Début FOOTER */
@@ -184,11 +195,9 @@ footer {
   color: var(--text-color);
   background-color: #f26d3d;
   height: 80px;
-  display: flex;
   align-items: center;
   justify-content: center;
   display: flex;
-  justify-content: center;
   flex-shrink: 0;
   font-family: Patrick Hand;
 }
@@ -208,6 +217,29 @@ footer {
 
 .fa-3x {
   font-size: 2.5em;
+}
+
+/* implantation du taxi */
+
+.taxi {
+  position: absolute;
+  left: 0;
+  margin-bottom: 30px;
+}
+.taxi-drive {
+  animation-duration: 2s;
+  animation-name: taxiDriving;
+  animation-timing-function: ease-in;
+}
+
+@keyframes taxiDriving {
+  from {
+    margin-right: 0%;
+  }
+
+  to {
+    margin-left: 95%;
+  }
 }
 
 /* Le main gère le placement de l'image de fond, la classe .background-opacity l'opacité de l'image */
@@ -263,20 +295,19 @@ main {
   margin: 5% auto 0px auto;
   text-align: center;
   font-family: 'Arimo';
+  color: white;
   font-size: var(--titleMobile);
-  background-color: rgba(225, 225, 225, 0.75);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  border-radius: 5px;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 .table-container {
   width: 100%;
   display: flex;
-  border-radius: 5px;
-  background-color: rgba(225, 225, 225, 0.75);
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
   margin: 10px auto 0px auto;
 }
 
@@ -285,6 +316,7 @@ main {
   margin: 20px auto;
   border-collapse: collapse;
   text-align: left;
+  color: white;
 }
 
 .hall-of-fame-container td,
@@ -298,6 +330,33 @@ th {
 
 .hall-of-fame-container td:nth-child(1) {
   text-align: center;
+}
+
+.playBtn {
+  height: 75px;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 15%;
+}
+
+.playBtn div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  margin: auto;
+  background-color: #f2b705;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: Andika;
+  cursor: pointer;
+}
+
+.playBtn button a {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -316,10 +375,10 @@ th {
     text-align: center;
     font-family: 'Arimo';
     font-size: var(--titleDesktop);
-    background-color: rgba(225, 225, 225, 0.75);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    border-radius: 5px;
+    color: white;
+    background-color: #f2b705;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
   }
 
   .hall-of-fame-container td,
@@ -331,36 +390,26 @@ th {
     font-size: var(--textDesktop);
   }
 
-  .playBtn button {
-    border: 1px solid var(--primary-color);
-    border-radius: 5%;
+  .playBtn {
     width: 150px;
     height: 75px;
-    background-color: var(--primary-color);
-    font-size: var(--textDesktop);
-    color: var(--text-color);
+    align-self: flex-end;
+  }
+  .playBtn div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 80px;
+    margin: auto;
+    background-color: #f2b705;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 20px;
+    font-family: Andika;
     cursor: pointer;
   }
-}
-
-.playBtn {
-  align-self: flex-end;
-  margin-top: 5%;
-}
-
-.playBtn button {
-  border: 1px solid var(--primary-color);
-  border-radius: 5%;
-  width: 150px;
-  height: 75px;
-  background-color: var(--primary-color);
-  font-size: var(--textMobile);
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-.playBtn button a {
-  text-decoration: none;
 }
 
 /* END RANKING PAGE */

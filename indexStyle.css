@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  border: solid;
   width: 150px;
   height: 80px;
   margin: auto;

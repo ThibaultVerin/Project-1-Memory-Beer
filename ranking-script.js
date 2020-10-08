@@ -1,4 +1,4 @@
-let ranking = [
+let rankingTable = [
   {
     name: 'Jean',
     score: 2000,
@@ -41,12 +41,36 @@ let ranking = [
   },
 ];
 
-for (let i = 0; i < ranking.length; i++) {
+if (localStorage.isOver === 'true') {
+  rankingTable.push({
+    name: localStorage.name1,
+    score: parseInt(localStorage.score1),
+  });
+
+  if (localStorage.hasOwnProperty('name2')) {
+    rankingTable.push({
+      name: localStorage.name2,
+      score: parseInt(localStorage.score2),
+    });
+  }
+}
+function compare(a, b) {
+  if (a.score > b.score) {
+    return -1;
+  } else if (b.score < a.score) {
+    return 1;
+  } else return 0;
+}
+
+let sortedRankingTable = rankingTable.sort(compare);
+console.log(sortedRankingTable);
+
+for (let i = 0; i < sortedRankingTable.length; i++) {
   const myTable = document.querySelector('tbody');
   myTable.innerHTML += `<tr>
-        <td>${i + 1}</td>
-        <td>${ranking[i].name}</td>
-        <td>${ranking[i].score}</td>
-    </tr>`;
+  <td>${i + 1}</td><td>${sortedRankingTable[i].name}</td><td>${
+    sortedRankingTable[i].score
+  }</td>
+  </tr>`;
 }
-console.log(ranking);
+console.log(sortedRankingTable);
