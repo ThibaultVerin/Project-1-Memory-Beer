@@ -1,30 +1,3 @@
-/* Résultat : retournement de cartes et changement de classe lors de l'evenement */
-/* ----- SCRIPT JAUGE -----
-L'objectif de la fonction est d'obtenir une taille en % qui est déterminée en fonction du score actuel.
-Ex: 0 paires trouvées, la taille est de 0% (0/9*100)
-Ex: 8 paires trouvées, la taille est ~90% (8/9*100)
-
-/!\ ATTENTION /!\
-Ici le total de paires à 9 (au lieu de 8) pour ne jamais atteindre une taille de 100% sinon la jauge est trop grande !
-
-*/
-
-// const jaugeContainer = document.querySelector('.jauge-container');
-// const jaugeMousse = document.querySelector('.jauge-mousse');
-// const totalPaires = 9;
-// let currentScore = 0;
-
-// function scoreCompteur() {
-//   currentScore = currentScore + 1;
-//   if (currentScore >= 8) return;
-//   let currentPercent = (currentScore / totalPaires) * 100;
-//   jaugeContainer.style.height = `${currentPercent}%`;
-//   jaugeContainer.style.transition = `height 2s ease-out`;
-//   console.log(currentScore);
-// }
-
-/* ----- END SCRIPT JAUGE ----- */
-
 // ----- START GAME -----
 var score = 0;
 var scorePlayerTwo = 0;
@@ -43,7 +16,6 @@ function onePlayerSelected() {
   playerNameBtn1.addEventListener('click', () => {
     const playerName = document.querySelector('#playerNameInput1');
     sessionStorage.setItem('name1', `${playerName.value}`);
-    console.log(localStorage);
     const selectDifficulty = document.querySelector('.playerName');
     selectDifficulty.innerHTML = 'Select difficulty';
     const levelBtn = document.querySelectorAll('.levelBtn');
@@ -157,7 +129,6 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
   for (let i = 0; i < playerBtn.length; i++) {
     playerBtn[i].style.display = 'flex';
   }
-  console.log(onePlayer);
   //set le nombre de joueurs et lance le menu pour 1 joueur
   onePlayer.addEventListener('click', () => {
     sessionStorage.setItem('playerNb', '1');
@@ -201,7 +172,6 @@ let drunk = false;
 const drunkMode = document.querySelector('#drunkMode');
 drunkMode.addEventListener('click', () => {
   drunk = true;
-  console.log(drunk);
 });
 
 // ----- END START GAME -----
@@ -296,11 +266,9 @@ const displayCard = function () {
   if (!clicked) {
     clicked = true;
     firstCard = this;
-    console.log('firstCard');
   } else {
     clicked = false;
     secondCard = this;
-    console.log('secondCard');
 
     /*Code pour gérer l'event DRUNK MODE */
 
@@ -336,7 +304,6 @@ function match() {
   if (firstCard.dataset.index === secondCard.dataset.index) {
     firstCard.removeEventListener('click', displayCard);
     secondCard.removeEventListener('click', displayCard);
-    console.log('its a match');
 
     //GAME OVER
     totalMatch += 1;
@@ -381,7 +348,6 @@ function match() {
         playerOneDiv.classList.toggle('isPlaying');
       }
 
-      console.log(playerOne);
       return score;
     } else if (playerTwo.isPlaying === true) {
       if (scorePlayerTwo > 0) {
