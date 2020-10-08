@@ -70,6 +70,32 @@ function twoPlayersSelected() {
     player1.style.display = 'none';
     player2.style.display = 'flex';
   });
+  // --------------------TEST VALIDATION ENTREE----------------
+  const validEnterP1 = () => {
+    const playerName1 = document.querySelector('#playerNameInput1');
+    localStorage.setItem('name1', `${playerName1.value}`);
+    player1.style.display = 'none';
+    player2.style.display = 'flex';
+  };
+  const validEnterP2 = () => {
+    const playerName1 = document.querySelector('#playerNameInput2');
+    localStorage.setItem('name2', `${playerName2.value}`);
+    player1.style.display = 'none';
+    player2.innerHTML = 'Select difficulty'; //remplace nom player 2 par select difficulty
+    const levelBtn = document.querySelectorAll('.levelBtn'); //affiche les différents levels
+    for (let i = 0; i < levelBtn.length; i++) {
+      levelBtn[i].style.visibility = 'visible';
+      levelBtn[i].style.opacity = 1;
+      levelBtn[i].style.transition = 'opacity 1s ease';
+    }
+  };
+  playerName1.onkeypress = function () {
+    if (event.keyCode == 13) validEnterP1();
+  };
+  playerName2.onkeypress = function () {
+    if (event.keyCode == 13) validEnterP2();
+  };
+  //--------------------FIN TEST-----------------------------
 
   //Stockage nom 2ème joueur + selection difficulté
   playerNameBtn2.addEventListener('click', () => {

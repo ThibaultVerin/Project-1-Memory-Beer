@@ -70,6 +70,7 @@ header ul li a {
   padding: 10px;
   text-decoration: none;
   color: var(--text-color);
+  font-size: 2em;
 }
 #burger-logo {
   width: 100%;

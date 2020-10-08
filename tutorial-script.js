@@ -3,8 +3,6 @@ const gameContainer = document.querySelector('.main-card-container');
 const mainBackground = document.querySelector('main');
 const firstCard = document.querySelectorAll('.card');
 
-const jaugeContainer = document.querySelector('.jauge-container');
-const jaugeMousse = document.querySelector('.jauge-mousse');
 const totalPaires = 9; //Le total de paires est déclaré à 9 au lieu de 8 car si la jauge fait 100% c'est trop grand
 let currentScore = 0; // Initialisation du score actuel à 0
 
