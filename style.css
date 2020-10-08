@@ -138,6 +138,9 @@ header ul li a {
 /*----------------------------FIN TEST DU SHAKE-----------------*/
 
 @media screen and (min-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
   #burger-logo {
     display: none;
   }
@@ -148,7 +151,7 @@ header ul li a {
 
   #navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     font-size: 30px;

@@ -149,14 +149,10 @@ function startGame() {
   scoreTable.style.display = 'flex';
 
   // ----- Div Mode 1 joueur -----
-  playerOneDiv.innerHTML = `
-  ${sessionStorage.name1}<br/>
-  Score: ${score}`;
+  playerOneDiv.innerHTML = `${sessionStorage.name1}: ${score}`;
 
   // ----- Div Mode 2 joueurs -----
-  playerTwoDiv.innerHTML = `
-  ${sessionStorage.name2}<br/>
-  Score: ${scorePlayerTwo}`;
+  playerTwoDiv.innerHTML = `${sessionStorage.name2}: ${scorePlayerTwo}`;
 
   if (!twoPlayersMode) {
     playerTwoDiv.style.display = 'none';
@@ -310,17 +306,11 @@ function match() {
     //GESTION SCORE : succès + 100 points
     if (playerOne.isPlaying === true) {
       score = score + 100;
-      playerOneDiv.innerHTML = `
-          ${sessionStorage.name1}<br/> 
-          Score: ${score}
-          `;
+      playerOneDiv.innerHTML = `${sessionStorage.name1} :${score}`;
       return score;
     } else if (playerTwo.isPlaying === true) {
       scorePlayerTwo = scorePlayerTwo + 100;
-      playerTwoDiv.innerHTML = `
-          ${sessionStorage.name2}<br/> 
-          Score: ${scorePlayerTwo}
-          `;
+      playerTwoDiv.innerHTML = `${sessionStorage.name2}: ${scorePlayerTwo}`;
       return scorePlayerTwo;
     }
     return scorePlayerTwo;
@@ -338,10 +328,7 @@ function match() {
       } else {
         score = 0;
       }
-      playerOneDiv.innerHTML = `
-        ${sessionStorage.name1}<br/> 
-        Score: ${score}
-        `;
+      playerOneDiv.innerHTML = `${sessionStorage.name1}: ${score}`;
       // MODE 2 JOUEURS : CHANGEMENT DE JOUEUR
       if (twoPlayersMode) {
         playerOne.isPlaying = false;
@@ -358,10 +345,7 @@ function match() {
       } else if (scorePlayerTwo <= 0) {
         scorePlayerTwo = 0;
       }
-      playerTwoDiv.innerHTML = `
-        ${sessionStorage.name2}<br/> 
-        Score: ${scorePlayerTwo}
-        `;
+      playerTwoDiv.innerHTML = `${sessionStorage.name2}: ${scorePlayerTwo}`;
       // MODE 2 JOUEURS : CHANGEMENT DE JOUEUR
       if (twoPlayersMode) {
         playerTwo.isPlaying = false;
