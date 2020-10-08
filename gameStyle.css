@@ -62,6 +62,8 @@
   padding-top: 10px;
   margin: auto;
   transform: rotateY(180deg);
+  backface-visibility: visible;
+  z-index: 1;
 }
 
 /* backface-visibility: hidden; car les deux images de la carte sont superposées et on ne veut pas voir l'image de fond */
@@ -268,6 +270,7 @@
     transform: scale(1);
     transform-style: preserve-3d;
     transition-duration: 0.5s;
+    z-index: 2;
   }
 
   /* .score-container {
