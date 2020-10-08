@@ -370,12 +370,11 @@ for (let i = 0; i < arrayCard.length; i++) {
   arrayCard[i].addEventListener('click', displayCard);
 }
 
-//FONCTION FIN DE JEU
+//FONCTION FIN DU JEU
 //Affiche la modale et stocke les données en local Storage pour les lire dans le ranking.
 function endGame() {
   const endGameModal = document.querySelector('.endGame-container');
   endGameModal.style.display = 'flex';
-  console.log('Fin du jeu');
   //Stockage des données
   localStorage.setItem('isOver', 'true');
   localStorage.setItem('score1', `${score}`);
