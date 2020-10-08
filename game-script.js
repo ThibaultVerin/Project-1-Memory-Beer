@@ -140,15 +140,12 @@ function startGame() {
   gameContainer.style = 'display : flex';
 }
 
-// ---- TEST DRUNK MODE -----
-// let drunk = false;
-// const drunkMode = document.querySelector('#drunkMode');
-// drunkMode.addEventListener('click', () => {
-//   drunk = true;
-//   console.log(drunk);
-// });
-
-// ---- FIN TEST DRUNK MODE -----
+let drunk = false;
+const drunkMode = document.querySelector('#drunkMode');
+drunkMode.addEventListener('click', () => {
+  drunk = true;
+  console.log(drunk);
+});
 
 // ----- END START GAME -----
 
@@ -243,11 +240,11 @@ const displayCard = function () {
 
     /*Code pour gérer l'event DRUNK MODE */
 
-    const mainContainer = document.querySelector('.main-card-container');
-
-    myContainer.addEventListener('click', () => {
-      myContainer.classList.add('rotate');
-    });
+    if (drunk) {
+      myContainer.addEventListener('click', () => {
+        myContainer.classList.add('rotate');
+      });
+    }
 
     match();
   }
