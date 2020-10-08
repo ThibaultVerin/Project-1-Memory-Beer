@@ -1,6 +1,6 @@
-// Selection du nombre de joueurs
+// Selection du nombre de joueurs et stockage dans sessionStorage
 function onePlayer() {
-  sessionStorage.setItem('player', 'one player');
+  sessionStorage.setItem('playerNb', '1');
   sessionStorage.setItem('playerIsSet', 'true');
   window.location.href = 'game.html';
 }
@@ -8,7 +8,7 @@ function onePlayer() {
 sessionStorage.player;
 
 function twoPlayers() {
-  sessionStorage.setItem('player', 'two players');
+  sessionStorage.setItem('playerNb', '2');
   sessionStorage.setItem('playerIsSet', 'true');
   window.location.href = 'game.html';
 }
