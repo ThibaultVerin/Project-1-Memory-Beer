@@ -42,7 +42,7 @@ function onePlayerSelected() {
 
   playerNameBtn1.addEventListener('click', () => {
     const playerName = document.querySelector('#playerNameInput1');
-    localStorage.setItem('name1', `${playerName.value}`);
+    sessionStorage.setItem('name1', `${playerName.value}`);
     console.log(localStorage);
     const selectDifficulty = document.querySelector('.playerName');
     selectDifficulty.innerHTML = 'Select difficulty';
@@ -67,7 +67,7 @@ function twoPlayersSelected() {
   //Nom du 2ème joueur + stockage nom du 1er joueur + Masquer div 1er joueur
   playerNameBtn1.addEventListener('click', () => {
     const playerName1 = document.querySelector('#playerNameInput1');
-    localStorage.setItem('name1', `${playerName1.value}`);
+    sessionStorage.setItem('name1', `${playerName1.value}`);
     player1.style.display = 'none';
     player2.style.display = 'flex';
   });
@@ -75,7 +75,7 @@ function twoPlayersSelected() {
   //Stockage nom 2ème joueur + selection difficulté
   playerNameBtn2.addEventListener('click', () => {
     const playerName2 = document.querySelector('#playerNameInput2');
-    localStorage.setItem('name2', `${playerName2.value}`);
+    sessionStorage.setItem('name2', `${playerName2.value}`);
     player2.innerHTML = 'Select difficulty'; //remplace nom player 2 par select difficulty
     const levelBtn = document.querySelectorAll('.levelBtn'); //affiche les différents levels
     for (let i = 0; i < levelBtn.length; i++) {
@@ -138,6 +138,8 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
 function startGame() {
   playMenu.style = 'display: none';
   gameContainer.style = 'display : flex';
+  const scoreTable = document.querySelector('.score-container');
+  scoreTable.style.display = 'flex';
 }
 
 // ----- Div Mode 1 joueur -----
@@ -329,7 +331,6 @@ function match() {
       console.log(playerOne);
       return score;
     } else if (playerTwo.isPlaying === true) {
-      console.log('Player two is playing !');
       if (scorePlayerTwo > 0) {
         scorePlayerTwo = scorePlayerTwo - 30;
       } else if (scorePlayerTwo <= 0) {
@@ -364,9 +365,10 @@ for (let i = 0; i < arrayCard.length; i++) {
 function endGame() {
   const endGameModal = document.querySelector('.endGame-container');
   endGameModal.style.display = 'flex';
+  console.log('Fin du jeu');
   //Stockage des données
   localStorage.setItem('isOver', 'true');
-  localStorage.setItem('score', `${score}`);
+  localStorage.setItem('score1', `${score}`);
   localStorage.setItem('score2', `${scorePlayerTwo}`);
   localStorage.setItem('name1', `${sessionStorage.name1}`);
   localStorage.setItem('name2', `${sessionStorage.name2}`);

@@ -43,11 +43,11 @@ let rankingTable = [
 
 if (localStorage.isOver === 'true') {
   rankingTable.push({
-    name: localStorage.name,
-    score: parseInt(localStorage.score),
+    name: localStorage.name1,
+    score: parseInt(localStorage.score1),
   });
 
-  if (localStorage.playerNb === '2') {
+  if (localStorage.hasOwnProperty('name2')) {
     rankingTable.push({
       name: localStorage.name2,
       score: parseInt(localStorage.score2),
