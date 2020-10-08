@@ -227,10 +227,6 @@ this = élément qui déclenche l'élément */
 const displayCard = function () {
   this.classList.toggle('open');
 
-  /*   if (lockBoard) {
-    return;
-  } */
-
   if (!clicked) {
     clicked = true;
     firstCard = this;
