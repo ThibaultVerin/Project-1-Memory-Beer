@@ -26,7 +26,7 @@ Ici le total de paires à 9 (au lieu de 8) pour ne jamais atteindre une taille d
 /* ----- END SCRIPT JAUGE ----- */
 
 // ----- START GAME -----
-var score = 5000;
+var score = 0;
 var scorePlayerTwo = 0;
 
 const gameContainer = document.querySelector('.main-card-container');
@@ -320,6 +320,7 @@ function match() {
   }
   // SI ECHEC : Le joueur perd 30 points
   else {
+    lockBoard = true;
     setTimeout(() => {
       firstCard.classList.remove('open');
       secondCard.classList.remove('open');
