@@ -58,6 +58,7 @@
 
 .aboutText {
   display: none;
+  width: 100%;
   background-color: #f2b705d7;
   color: var(--text-color);
   top: 0;
