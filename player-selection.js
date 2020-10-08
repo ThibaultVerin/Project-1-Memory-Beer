@@ -1,4 +1,4 @@
-// Selection du nombre de joueurs
+// Selection du nombre de joueurs et stockage dans sessionStorage
 function onePlayer() {
   sessionStorage.setItem('playerNb', '1');
   sessionStorage.setItem('playerIsSet', 'true');

@@ -109,6 +109,7 @@ else if (
 }
 
 // Cas n°3 : Nombre de joueurs non sélectionné
+// Enregistrement du choix du nombre de joueurs dans sessionStorage
 else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
   //Affiche les boutons 1 player, 2 players
   for (let i = 0; i < playerBtn.length; i++) {
@@ -135,27 +136,28 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
 
 // ----- FIN AFFICHAGE MENU -----
 
+const playerOneDiv = document.querySelector('#player1');
+const playerTwoDiv = document.querySelector('#player2');
+
 function startGame() {
   playMenu.style = 'display: none';
   gameContainer.style = 'display : flex';
   const scoreTable = document.querySelector('.score-container');
   scoreTable.style.display = 'flex';
-}
 
-// ----- Div Mode 1 joueur -----
-const playerOneDiv = document.querySelector('#player1');
-playerOneDiv.innerHTML = `
-${sessionStorage.name1}<br/> 
-Score: ${score}`;
+  // ----- Div Mode 1 joueur -----
+  playerOneDiv.innerHTML = `
+  ${sessionStorage.name1}<br/>
+  Score: ${score}`;
 
-// ----- Div Mode 2 joueurs -----
-const playerTwoDiv = document.querySelector('#player2');
-playerTwoDiv.innerHTML = `
-${sessionStorage.name2}<br/> 
-Score: ${scorePlayerTwo}`;
+  // ----- Div Mode 2 joueurs -----
+  playerTwoDiv.innerHTML = `
+  ${sessionStorage.name2}<br/>
+  Score: ${scorePlayerTwo}`;
 
-if (!twoPlayersMode) {
-  playerTwoDiv.style.display = 'none';
+  if (!twoPlayersMode) {
+    playerTwoDiv.style.display = 'none';
+  }
 }
 
 // ---- TEST DRUNK MODE -----
@@ -169,6 +171,8 @@ if (!twoPlayersMode) {
 // ---- FIN TEST DRUNK MODE -----
 
 // ----- END START GAME -----
+
+// ----- SHUFFLE -----
 
 /* Récupération des images - carte face cachées / cartes avec icone de bières
  */
@@ -220,6 +224,8 @@ for (let i = 0; i < cardArray.length; i++) {
   <img class="card-front" src=${cardArray[i].url} >`;
 }
 
+// ----- GESTION PLATEAU DE JEU -----
+
 /* Récupération des cartes et placement dans un tableau avec "..." */
 
 const card = document.querySelectorAll('.card');
@@ -264,13 +270,15 @@ const displayCard = function () {
 
 /*     - 3eme étape : via le data.index definit dans l'image on va déterminer si match ou non, si match remove eventListener, si pas match remove class et add setTimeout pour gérer la transition */
 
+// ----- FONCTION MATCHING -----
+
 let playerOne = {
-  name: localStorage.name1,
+  name: sessionStorage.name1,
   score: score,
   isPlaying: true,
 };
 let playerTwo = {
-  name: localStorage.name2,
+  name: sessionStorage.name2,
   score: scorePlayerTwo,
   isPlaying: false,
 };
@@ -290,7 +298,7 @@ function match() {
       endGame();
     }
 
-    //GESTION SCORE
+    //GESTION SCORE : succès + 100 points
     if (playerOne.isPlaying === true) {
       score = score + 100;
       playerOneDiv.innerHTML = `
@@ -308,7 +316,7 @@ function match() {
     }
     return scorePlayerTwo;
   }
-  // SI ECHEC
+  // SI ECHEC : Le joueur perd 30 points
   else {
     if (playerOne.isPlaying === true) {
       if (score > 0) {
@@ -357,11 +365,14 @@ function match() {
   }
 }
 
+// EVENEMENT CLIQUE SUR LES CARTES
+
 for (let i = 0; i < arrayCard.length; i++) {
   arrayCard[i].addEventListener('click', displayCard);
 }
 
-//Fonction qui permet de stocker le score en local storage
+//FONCTION FIN DE JEU
+//Affiche la modale et stocke les données en local Storage pour les lire dans le ranking.
 function endGame() {
   const endGameModal = document.querySelector('.endGame-container');
   endGameModal.style.display = 'flex';
@@ -372,7 +383,7 @@ function endGame() {
   localStorage.setItem('score2', `${scorePlayerTwo}`);
   localStorage.setItem('name1', `${sessionStorage.name1}`);
   localStorage.setItem('name2', `${sessionStorage.name2}`);
-  //Clean sessionStorage pour choisir à nouveau le nb de joueurs
+  //Clean sessionStorage pour choisir à nouveau le nb de joueurs si play again
   sessionStorage.clear();
 }
 // endGame();
