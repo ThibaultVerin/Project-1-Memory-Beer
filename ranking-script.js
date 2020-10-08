@@ -1,43 +1,43 @@
 let rankingTable = [
   {
-    name: 'Jean',
-    score: 2000,
+    name: 'M. Esclave',
+    score: 230,
   },
   {
-    name: 'Antoine',
-    score: 1800,
+    name: 'Dark Vador',
+    score: 180,
   },
   {
-    name: 'Test',
-    score: 1500,
+    name: 'Homer',
+    score: 10,
   },
   {
-    name: 'Test 2',
-    score: 1300,
+    name: 'Rick',
+    score: 110,
   },
   {
-    name: 'Test 3',
-    score: 1000,
+    name: 'Morty',
+    score: 100,
   },
   {
-    name: 'Test 4',
-    score: 1300,
+    name: 'Blake',
+    score: 210,
   },
   {
-    name: 'Test 5',
-    score: 1000,
+    name: 'Mortimer',
+    score: 200,
   },
   {
-    name: 'Test 6',
-    score: 1300,
+    name: 'Aspegix',
+    score: 30,
   },
   {
-    name: 'Test 7',
-    score: 1000,
+    name: 'Grodebilix',
+    score: 20,
   },
   {
-    name: 'Test 8',
-    score: 1000,
+    name: 'M. Garrison',
+    score: 200,
   },
 ];
 

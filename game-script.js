@@ -134,9 +134,7 @@ const playerBtn = document.querySelectorAll('.playerBtn'); // Selection du nombr
 const playerNameBtn1 = document.querySelector('#playerNameCompleted'); //submit player 1 name
 const playerNameBtn2 = document.querySelector('#playerNameCompleted2'); //submit player 2 name
 const onePlayer = document.querySelector('#playerBtn1');
-onePlayer.addEventListener('click', () => {
-  console.log('coucou');
-});
+
 let twoPlayersMode = false;
 // Cas n°1: Mode 1 joueur déjà sélectionné
 if (sessionStorage.playerIsSet === 'true' && sessionStorage.playerNb === '1') {
@@ -162,7 +160,6 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
   console.log(onePlayer);
   //set le nombre de joueurs et lance le menu pour 1 joueur
   onePlayer.addEventListener('click', () => {
-    console.log('coucou');
     sessionStorage.setItem('playerNb', '1');
     sessionStorage.setItem('playerIsSet', 'true');
     onePlayerSelected();
@@ -417,7 +414,6 @@ for (let i = 0; i < arrayCard.length; i++) {
 function endGame() {
   const endGameModal = document.querySelector('.endGame-container');
   endGameModal.style.display = 'flex';
-  console.log('Fin du jeu');
   //Stockage des données
   localStorage.setItem('isOver', 'true');
   localStorage.setItem('score1', `${score}`);
