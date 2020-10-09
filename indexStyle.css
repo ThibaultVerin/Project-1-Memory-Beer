@@ -1,10 +1,13 @@
 /* TUTORIAL CSS */
+.main-card-container-tuto {
+  display: none;
+}
 
 .index-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 400px;
 }
 .indexBtn {
@@ -15,7 +18,6 @@
   width: 150px;
   height: 80px;
   margin: auto;
-  margin-bottom: 10px;
   background-color: #f2b705;
   border-radius: 10px;
   box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
@@ -25,97 +27,163 @@
   cursor: pointer;
 }
 
-#tutorialBtn a {
-  text-decoration: none;
-  color: white;
-}
-
-#tutorial {
-  width: 200px;
-  margin: auto;
-  background-color: white;
-}
-
-/* ----- Animation clignotemment -----  */
-@keyframes clignoter {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.card-clignote {
-  border-radius: 10px;
-  height: 120px;
-  width: 100px;
-  margin-bottom: 20px;
-  background-color: #f28a2e;
-  box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.2);
-  animation-duration: 0.8s;
-  animation-name: clignoter;
-  animation-iteration-count: 4;
-  transition: none;
-}
-
-/* ----- FIN Animation clignottement ----- */
-
-/* ----- Plateau de jeu ----- */
-
-.main-card-container {
+#tutorialBtn {
   display: none;
-  visibility: hidden;
-  opacity: 0;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  margin: auto;
-  background-color: #f2b705;
-  border-radius: 10px;
-  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
-  border: 25px solid rgba(242, 109, 61, 0.65);
-  display: flex;
 }
 
-.card-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  height: 570px;
-  width: 75%;
-  margin: auto;
-  border-radius: 10px;
+@media screen and (min-width: 768px) {
+  .index-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+  }
+  .indexBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid;
+    width: 150px;
+    height: 80px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #f2b705;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 20px;
+    font-family: Andika;
+    cursor: pointer;
+  }
+
+  #tutorialBtn {
+    display: flex;
+  }
+
+  #tutorialBtn a {
+    text-decoration: none;
+    color: white;
+  }
+
+  #tutorial {
+    width: 200px;
+    margin: auto;
+    background-color: white;
+  }
+
+  /* ----- Animation clignotemment -----  */
+  @keyframes clignoter {
+    0% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .card-clignote {
+    animation-duration: 0.8s;
+    animation-name: clignoter;
+    animation-iteration-count: 3;
+    /* transition: none; */
+    border-radius: 10px;
+    height: 140px;
+    width: 120px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition-duration: 0.5s;
+  }
+
+  .main-container {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-card-container-tuto {
+    display: none;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    height: 700px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: #f2b705;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    perspective: 1000px;
+  }
+
+  .card {
+    border-radius: 10px;
+    height: 90px;
+    width: 70px;
+    margin-bottom: 20px;
+    background-color: #f28a2e;
+    box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition-duration: 0.5s;
+  }
+
+  /* :active veut dire que l'élément est activé, ici cliqué */
+
+  .card:active {
+    transform: scale(0.9);
+    transition-duration: 0.2s;
+  }
+
+  /* Lorsque eventListener sur une image elle change de classe pour ".open" et on va la rotate pour voir l'autre face*/
+
+  .card.open {
+    transform: rotateY(180deg);
+  }
+
+  .card-face {
+    height: 80%;
+    padding-top: 10px;
+    margin: auto;
+    transform: rotateY(180deg);
+    backface-visibility: visible;
+    z-index: 1;
+  }
+
+  /* backface-visibility: hidden; car les deux images de la carte sont superposées et on ne veut pas voir l'image de fond */
+
+  .card img {
+    width: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+
+  .card-face-back {
+    height: 60%;
+    margin: auto;
+  }
+
+  .card:hover {
+    cursor: pointer;
+  }
 }
-
-.card {
-  border: 1px solid black;
-  border-radius: 10px;
-  height: 120px;
-  width: 100px;
-  margin-bottom: 20px;
-  background-color: #f28a2e;
-  box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.2);
-}
-
-.card-face {
-  width: 100%;
-  height: 80%;
-  object-fit: contain;
-  padding-top: 10px;
-  margin: auto;
-}
-
-.card:hover {
-  cursor: pointer;
-}
-
-/* ----- FIN plateau de jeu ----- */
-
-@media screen and (max-width: 5540px) {
-  
