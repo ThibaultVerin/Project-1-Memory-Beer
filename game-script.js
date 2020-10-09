@@ -25,6 +25,7 @@ function onePlayerSelected() {
       levelBtn[i].style.transition = 'opacity 1s ease';
     }
   });
+  // Début -- Récupération de la touche Entrée pour valider l'input //
   const validEnterP1 = () => {
     const playerName1 = document.querySelector('#playerNameInput1');
     sessionStorage.setItem('name1', `${playerName1.value}`);
@@ -40,6 +41,7 @@ function onePlayerSelected() {
     if (event.keyCode == 13) validEnterP1();
   };
 }
+// Fin -- Récupération de la touche Entrée pour valider l'input //
 
 function twoPlayersSelected() {
   // Masque les div de selection du nombre de joueurs
@@ -58,7 +60,7 @@ function twoPlayersSelected() {
     player2.style.display = 'flex';
   });
 
-  // --------------------TEST VALIDATION ENTREE----------------//
+  // Début -- Récupération de la touche Entrée pour valider l'input //
   const validEnterP1 = () => {
     const playerName1 = document.querySelector('#playerNameInput1');
     sessionStorage.setItem('name1', `${playerName1.value}`);
@@ -83,7 +85,7 @@ function twoPlayersSelected() {
   playerName2.onkeypress = function () {
     if (event.keyCode == 13) validEnterP2();
   };
-  //--------------------FIN TEST-----------------------------//
+  // Fin -- Récupération de la touche Entrée pour valider l'input //
 
   //Stockage nom 2ème joueur + selection difficulté
   playerNameBtn2.addEventListener('click', () => {
