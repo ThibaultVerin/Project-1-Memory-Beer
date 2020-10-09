@@ -57,7 +57,7 @@ if (localStorage.isOver === 'true') {
 function compare(a, b) {
   if (a.score > b.score) {
     return -1;
-  } else if (b.score < a.score) {
+  } else if (b.score > a.score) {
     return 1;
   } else return 0;
 }
@@ -73,4 +73,3 @@ for (let i = 0; i < sortedRankingTable.length; i++) {
   }</td>
   </tr>`;
 }
-console.log(sortedRankingTable);
