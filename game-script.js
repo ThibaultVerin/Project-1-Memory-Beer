@@ -258,11 +258,9 @@ const displayCard = function () {
   if (!clicked) {
     clicked = true;
     firstCard = this;
-    console.log('firstCard');
   } else {
     clicked = false;
     secondCard = this;
-    console.log('secondCard');
 
     /*Code pour gérer l'event DRUNK MODE */
 
