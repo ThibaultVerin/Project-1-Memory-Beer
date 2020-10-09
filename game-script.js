@@ -1,30 +1,3 @@
-/* Résultat : retournement de cartes et changement de classe lors de l'evenement */
-/* ----- SCRIPT JAUGE -----
-L'objectif de la fonction est d'obtenir une taille en % qui est déterminée en fonction du score actuel.
-Ex: 0 paires trouvées, la taille est de 0% (0/9*100)
-Ex: 8 paires trouvées, la taille est ~90% (8/9*100)
-
-/!\ ATTENTION /!\
-Ici le total de paires à 9 (au lieu de 8) pour ne jamais atteindre une taille de 100% sinon la jauge est trop grande !
-
-*/
-
-// const jaugeContainer = document.querySelector('.jauge-container');
-// const jaugeMousse = document.querySelector('.jauge-mousse');
-// const totalPaires = 9;
-// let currentScore = 0;
-
-// function scoreCompteur() {
-//   currentScore = currentScore + 1;
-//   if (currentScore >= 8) return;
-//   let currentPercent = (currentScore / totalPaires) * 100;
-//   jaugeContainer.style.height = `${currentPercent}%`;
-//   jaugeContainer.style.transition = `height 2s ease-out`;
-//   console.log(currentScore);
-// }
-
-/* ----- END SCRIPT JAUGE ----- */
-
 // ----- START GAME -----
 var score = 0;
 var scorePlayerTwo = 0;
@@ -43,7 +16,6 @@ function onePlayerSelected() {
   playerNameBtn1.addEventListener('click', () => {
     const playerName = document.querySelector('#playerNameInput1');
     sessionStorage.setItem('name1', `${playerName.value}`);
-    console.log(localStorage);
     const selectDifficulty = document.querySelector('.playerName');
     selectDifficulty.innerHTML = 'Select difficulty';
     const levelBtn = document.querySelectorAll('.levelBtn');
@@ -53,7 +25,23 @@ function onePlayerSelected() {
       levelBtn[i].style.transition = 'opacity 1s ease';
     }
   });
+  // Début -- Récupération de la touche Entrée pour valider l'input //
+  const validEnterP1 = () => {
+    const playerName1 = document.querySelector('#playerNameInput1');
+    sessionStorage.setItem('name1', `${playerName1.value}`);
+    player1.innerHTML = 'Select difficulty'; //remplace nom player 1 par select difficulty
+    const levelBtn = document.querySelectorAll('.levelBtn'); //affiche les différents levels
+    for (let i = 0; i < levelBtn.length; i++) {
+      levelBtn[i].style.visibility = 'visible';
+      levelBtn[i].style.opacity = 1;
+      levelBtn[i].style.transition = 'opacity 1s ease';
+    }
+  };
+  playerName1.onkeypress = function () {
+    if (event.keyCode == 13) validEnterP1();
+  };
 }
+// Fin -- Récupération de la touche Entrée pour valider l'input //
 
 function twoPlayersSelected() {
   // Masque les div de selection du nombre de joueurs
@@ -71,6 +59,33 @@ function twoPlayersSelected() {
     player1.style.display = 'none';
     player2.style.display = 'flex';
   });
+
+  // Début -- Récupération de la touche Entrée pour valider l'input //
+  const validEnterP1 = () => {
+    const playerName1 = document.querySelector('#playerNameInput1');
+    sessionStorage.setItem('name1', `${playerName1.value}`);
+    player1.style.display = 'none';
+    player2.style.display = 'flex';
+  };
+  const validEnterP2 = () => {
+    const playerName2 = document.querySelector('#playerNameInput2');
+    sessionStorage.setItem('name2', `${playerName2.value}`);
+    player1.style.display = 'none';
+    player2.innerHTML = 'Select difficulty'; //remplace nom player 2 par select difficulty
+    const levelBtn = document.querySelectorAll('.levelBtn'); //affiche les différents levels
+    for (let i = 0; i < levelBtn.length; i++) {
+      levelBtn[i].style.visibility = 'visible';
+      levelBtn[i].style.opacity = 1;
+      levelBtn[i].style.transition = 'opacity 1s ease';
+    }
+  };
+  playerName1.onkeypress = function () {
+    if (event.keyCode == 13) validEnterP1();
+  };
+  playerName2.onkeypress = function () {
+    if (event.keyCode == 13) validEnterP2();
+  };
+  // Fin -- Récupération de la touche Entrée pour valider l'input //
 
   //Stockage nom 2ème joueur + selection difficulté
   playerNameBtn2.addEventListener('click', () => {
@@ -93,9 +108,7 @@ const playerBtn = document.querySelectorAll('.playerBtn'); // Selection du nombr
 const playerNameBtn1 = document.querySelector('#playerNameCompleted'); //submit player 1 name
 const playerNameBtn2 = document.querySelector('#playerNameCompleted2'); //submit player 2 name
 const onePlayer = document.querySelector('#playerBtn1');
-onePlayer.addEventListener('click', () => {
-  console.log('coucou');
-});
+
 let twoPlayersMode = false;
 // Cas n°1: Mode 1 joueur déjà sélectionné
 if (sessionStorage.playerIsSet === 'true' && sessionStorage.playerNb === '1') {
@@ -118,10 +131,8 @@ else if (!sessionStorage.hasOwnProperty('playerIsSet')) {
   for (let i = 0; i < playerBtn.length; i++) {
     playerBtn[i].style.display = 'flex';
   }
-  console.log(onePlayer);
   //set le nombre de joueurs et lance le menu pour 1 joueur
   onePlayer.addEventListener('click', () => {
-    console.log('coucou');
     sessionStorage.setItem('playerNb', '1');
     sessionStorage.setItem('playerIsSet', 'true');
     onePlayerSelected();
@@ -163,7 +174,6 @@ let drunk = false;
 const drunkMode = document.querySelector('#drunkMode');
 drunkMode.addEventListener('click', () => {
   drunk = true;
-  console.log(drunk);
 });
 
 // ----- END START GAME -----
@@ -296,7 +306,6 @@ function match() {
   if (firstCard.dataset.index === secondCard.dataset.index) {
     firstCard.removeEventListener('click', displayCard);
     secondCard.removeEventListener('click', displayCard);
-    console.log('its a match');
 
     //GAME OVER
     totalMatch += 1;
@@ -341,7 +350,6 @@ function match() {
         playerOneDiv.classList.toggle('isPlaying');
       }
 
-      console.log(playerOne);
       return score;
     } else if (playerTwo.isPlaying === true) {
       if (scorePlayerTwo > 0) {
@@ -374,7 +382,6 @@ for (let i = 0; i < arrayCard.length; i++) {
 function endGame() {
   const endGameModal = document.querySelector('.endGame-container');
   endGameModal.style.display = 'flex';
-  console.log('Fin du jeu');
   //Stockage des données
   localStorage.setItem('isOver', 'true');
   localStorage.setItem('score1', `${score}`);
