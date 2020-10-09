@@ -385,9 +385,11 @@ function endGame() {
   //Stockage des données
   localStorage.setItem('isOver', 'true');
   localStorage.setItem('score1', `${score}`);
-  localStorage.setItem('score2', `${scorePlayerTwo}`);
   localStorage.setItem('name1', `${sessionStorage.name1}`);
-  localStorage.setItem('name2', `${sessionStorage.name2}`);
+  if (localStorage.hasOwnProperty('name2')) {
+    localStorage.setItem('score2', `${scorePlayerTwo}`);
+    localStorage.setItem('name2', `${sessionStorage.name2}`);
+  }
   //Clean sessionStorage pour choisir à nouveau le nb de joueurs si play again
   sessionStorage.clear();
 }
